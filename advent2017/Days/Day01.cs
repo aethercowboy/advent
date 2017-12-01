@@ -2,9 +2,9 @@
 
 namespace advent2017.Days
 {
-    public class Day01
+    public class Day01 : IDay
     {
-        public int Process0(string input, Func<int,int, int> nextIdxFunc)
+        public int Part0(string input, Func<int,int, int> nextIdxFunc)
         {
             var output = 0;
 
@@ -26,15 +26,16 @@ namespace advent2017.Days
             return output;
         }
 
+
         /// <summary>
         /// Reviews a sequence of digits and finds the sum of all digits that match the next digit in the list.
         /// The list is circular, so the digit after the last digit is the first digit in the list.
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public int Process1(string input)
+        public int Part1(string input)
         {
-            return Process0(input, (i, l) => (i + 1) % l);
+            return Part0(input, (i, l) => (i + 1) % l);
         }
 
         /// <summary>
@@ -43,9 +44,9 @@ namespace advent2017.Days
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public int Process2(string input)
+        public int Part2(string input)
         {
-            return Process0(input, (i, l) => (i + l / 2) % l);
+            return Part0(input, (i, l) => (i + l / 2) % l);
         }
     }
 }
