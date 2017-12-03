@@ -26,10 +26,5 @@ namespace advent2017.Extensions
         {
             return strs.Select(ToInt);
         }
-
-        public static string NthOrNull(this string[] strs, int index)
-        {
-            return strs.Length < index ? strs[index] : null;
-        }
     }
 }

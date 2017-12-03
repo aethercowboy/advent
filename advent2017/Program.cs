@@ -10,7 +10,7 @@ namespace advent2017
     {
         private static void Main(string[] args)
         {
-            //args = new[] {"day02"};
+            //args = new[] {"day03"};
 
             if (!args.Any())
             {
@@ -21,10 +21,13 @@ namespace advent2017
                 switch (args[0])
                 {
                     case "day01":
-                        Day01(args.NthOrNull(1));
+                        Day01(args.NthOrDefault(1));
                         break;
                     case "day02":
-                        Day02(args.NthOrNull(1));
+                        Day02(args.NthOrDefault(1));
+                        break;
+                    case "day03":
+                        Day03(args.NthOrDefault(1));
                         break;
                 }
 
@@ -73,7 +76,18 @@ namespace advent2017
             Console.WriteLine("Running All");
             Day01();
             Day02();
+            Day03();
         }
+        private static void Day03(string input = null)
+        {
+            if (input == null)
+            {
+                input = DayData.Day03;
+            }
+
+            Day<Day03>(3, input);
+        }
+
 
         private static void Day02(string input = null)
         {
