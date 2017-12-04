@@ -7,33 +7,10 @@ namespace advent2017.Days
 {
     public class Day02 : IDay
     {
-        private static int ProcessLine(string input, Func<IList<int>,int> numberFunc)
+        private static int ProcessLine(string input, Func<IList<int>, int> numberFunc)
         {
             var numbers = input.Words().ToInts().ToList();
             return numberFunc(numbers);
-        }
-
-        private static int ProcessLine1(string input)
-        {
-            return ProcessLine(input, numbers =>
-            {
-                var max = numbers.Max();
-                var min = numbers.Min();
-
-                return max - min;
-            });
-        }
-
-        private static int ProcessLine2(string input)
-        {
-            return ProcessLine(input, numbers =>
-            {
-                return numbers.SelectMany(x => numbers, (x, y) => new { x, y })
-                    .Where(t => t.x != t.y)
-                    .Where(t => t.x % t.y == 0)
-                    .Select(t => t.x / t.y)
-                    .FirstOrDefault();
-            });
         }
 
         /// <summary>
@@ -44,7 +21,13 @@ namespace advent2017.Days
         /// <returns></returns>
         public int Part1(string input)
         {
-            return input.Lines().Sum(ProcessLine1);
+            return input.Lines().Sum(x => ProcessLine(x, numbers =>
+            {
+                var max = numbers.Max();
+                var min = numbers.Min();
+
+                return max - min;
+            }));
         }
 
         /// <summary>
@@ -56,7 +39,14 @@ namespace advent2017.Days
         /// <returns></returns>
         public int Part2(string input)
         {
-            return input.Lines().Sum(ProcessLine2);
+            return input.Lines().Sum(z => ProcessLine(z, numbers =>
+            {
+                return numbers.SelectMany(x => numbers, (x, y) => new {x, y})
+                    .Where(t => t.x != t.y)
+                    .Where(t => t.x % t.y == 0)
+                    .Select(t => t.x / t.y)
+                    .FirstOrDefault();
+            }));
         }
     }
 }
