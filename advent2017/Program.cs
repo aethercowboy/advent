@@ -10,7 +10,7 @@ namespace advent2017
     {
         private static void Main(string[] args)
         {
-            //args = new[] {"day03"};
+            //args = new[] {"day04"};
 
             if (!args.Any())
             {
@@ -28,6 +28,9 @@ namespace advent2017
                         break;
                     case "day03":
                         Day03(args.NthOrDefault(1));
+                        break;
+                    case "day04":
+                        Day04(args.NthOrDefault(1));
                         break;
                 }
 
@@ -77,7 +80,19 @@ namespace advent2017
             Day01();
             Day02();
             Day03();
+            Day04();
         }
+
+        private static void Day04(string input = null)
+        {
+            if (input == null)
+            {
+                input = DayData.Day04;
+            }
+
+            Day<Day04>(4, input);
+        }
+
         private static void Day03(string input = null)
         {
             if (input == null)
@@ -87,7 +102,6 @@ namespace advent2017
 
             Day<Day03>(3, input);
         }
-
 
         private static void Day02(string input = null)
         {

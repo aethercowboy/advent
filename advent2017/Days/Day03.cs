@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using advent2017.Extensions;
 
 namespace advent2017.Days
@@ -19,9 +16,8 @@ namespace advent2017.Days
             return str.Aggregate(pos, GetNextPos);
         }
 
-        private static string BuildString(int n)
+        private static IEnumerable<char> BuildString(int n)
         {
-            var str = "";
             const string input = "RULD";
             var size = 1;
             var run = 1;
@@ -30,7 +26,8 @@ namespace advent2017.Days
             for (var i = 1; i < n; i++)
             {
                 var c = input[next];
-                str += c;
+
+                yield return c;
 
                 run--;
 
@@ -44,8 +41,6 @@ namespace advent2017.Days
                 next = (next + 1) % input.Length;
                 run = size;
             }
-
-            return str;
         }
 
         private static Tuple<int, int> GetNextPos(Tuple<int, int> pos, char c)

@@ -1,33 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
 using advent2017.Extensions;
 
 namespace advent2017.Days
 {
     public class Day02 : IDay
     {
-        private static int ProcessLine1(string input)
+        private static int ProcessLine(string input, Func<IList<int>,int> numberFunc)
         {
             var numbers = input.Words().ToInts().ToList();
+            return numberFunc(numbers);
+        }
 
-            var max = numbers.Max();
-            var min = numbers.Min();
+        private static int ProcessLine1(string input)
+        {
+            return ProcessLine(input, numbers =>
+            {
+                var max = numbers.Max();
+                var min = numbers.Min();
 
-            return max - min;
+                return max - min;
+            });
         }
 
         private static int ProcessLine2(string input)
         {
-            var numbers = input.Words().ToInts().ToList();
-
-            return numbers.SelectMany(x => numbers, (x, y) => new {x, y})
-                .Where(t => t.x != t.y)
-                .Where(t => t.x % t.y == 0)
-                .Select(t => t.x / t.y)
-                .FirstOrDefault();
+            return ProcessLine(input, numbers =>
+            {
+                return numbers.SelectMany(x => numbers, (x, y) => new { x, y })
+                    .Where(t => t.x != t.y)
+                    .Where(t => t.x % t.y == 0)
+                    .Select(t => t.x / t.y)
+                    .FirstOrDefault();
+            });
         }
 
         /// <summary>
