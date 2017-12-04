@@ -1,0 +1,83 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using advent2017.Data;
+using advent2017.Days;
+using advent2017.Extensions;
+using System;
+
+<# var current = 4; #>
+<# var range = Enumerable.Range(1,current); #>
+
+namespace advent2017 {
+	public static class Runner {
+		public static void Run(string[] args) {
+			switch (args[0])
+			{
+<# foreach (var n in range) { #>
+<# var num = n.ToString("D2"); #>
+				case "day<#= num #>":
+					Day<#= num #>(args.NthOrDefault(1));
+					break;
+<# } #>
+			}
+		}
+
+		public static void RunAll() {
+			Console.WriteLine("Running All");
+<# foreach (var n in range) { #>
+<# var num = n.ToString("D2"); #>
+			Day<#= num #>();
+<# } #>
+		}
+
+		private static void Day<TDay>(int day, string input)
+			where TDay : IDay, new()
+		{
+			Console.WriteLine($"Day {day:D2}");
+
+			var client = new TDay();
+
+			Console.Write("Part 1: ");
+
+			try
+			{
+				var output1 = client.Part1(input);
+
+				Console.WriteLine(output1);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.Message);
+			}
+
+			Console.Write("Part 2: ");
+
+			try
+			{
+				var output2 = client.Part2(input);
+
+				Console.WriteLine(output2);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.Message);
+			}
+		}
+
+<# foreach (var n in range) { #>
+<# var num = n.ToString("D2"); #>
+		private static void Day<#= num #>(string input = null) {
+			if (input == null)
+			{
+				input = DayData.Day<#= num #>;
+			}
+
+			Day<Day<#= num #>>(<#= n #>, input);
+		}
+<# } #>
+	}
+}
