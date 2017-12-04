@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace advent2017.Days
+﻿namespace advent2017.Days
 {
     public interface IDay
     {

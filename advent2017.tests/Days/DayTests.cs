@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using advent2017.Days;
+﻿using advent2017.Days;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace advent2017.tests.Days

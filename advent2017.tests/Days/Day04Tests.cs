@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using advent2017.Days;
+﻿using advent2017.Days;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace advent2017.tests.Days
