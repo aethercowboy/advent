@@ -9,8 +9,10 @@ using advent2017.Days;
 using advent2017.Extensions;
 using System;
 
-<# var current = 4; #>
+<# var current = 5; #>
 <# var range = Enumerable.Range(1,current); #>
+<# var callers = new List<string>(); #>
+<# var methods = new List<string>(); #>
 
 namespace advent2017 {
 	public static class Runner {
@@ -22,15 +24,16 @@ namespace advent2017 {
 				case "day<#= num #>":
 					Day<#= num #>(args.NthOrDefault(1));
 					break;
+<# callers.Add($"Day{num}();"); #>
+<# methods.Add(Generate(n,num)); #>
 <# } #>
 			}
 		}
 
 		public static void RunAll() {
 			Console.WriteLine("Running All");
-<# foreach (var n in range) { #>
-<# var num = n.ToString("D2"); #>
-			Day<#= num #>();
+<# foreach (var caller in callers) { #>
+			<#= caller #>
 <# } #>
 		}
 
@@ -68,16 +71,21 @@ namespace advent2017 {
 			}
 		}
 
-<# foreach (var n in range) { #>
-<# var num = n.ToString("D2"); #>
-		private static void Day<#= num #>(string input = null) {
-			if (input == null)
-			{
-				input = DayData.Day<#= num #>;
-			}
-
-			Day<Day<#= num #>>(<#= n #>, input);
-		}
+<# foreach (var method in methods) { #>
+		<#= method #>
 <# } #>
 	}
 }
+
+<#+ 
+public string Generate(int n, string num) { 
+return $"private static void Day{num}(string input = null) {{\n" +
+	"\t\t\tif (input == null) {\n" +
+	$"\t\t\t\tinput = DayData.Day{num};\n" +
+	"\t\t\t}\n\n" +
+	$"\t\t\tDay<Day{num}>({n}, input);\n" +
+	"\t\t}\n"
+;
+	//return $"private static void Day{num}(string input = null) { if (input == null) { input = DayData.Day{num}; }	Day<Day{num}>({n}, input);}";
+} 
+#>

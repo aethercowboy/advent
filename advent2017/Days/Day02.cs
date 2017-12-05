@@ -9,8 +9,7 @@ namespace advent2017.Days
     {
         private static int ProcessLine(string input, Func<IList<int>, int> numberFunc)
         {
-            var numbers = input.Words().ToInts().ToList();
-            return numberFunc(numbers);
+            return input.Lines().Sum(x => numberFunc(x.Words().ToInts().ToList()));
         }
 
         /// <summary>
@@ -21,13 +20,13 @@ namespace advent2017.Days
         /// <returns></returns>
         public int Part1(string input)
         {
-            return input.Lines().Sum(x => ProcessLine(x, numbers =>
+            return ProcessLine(input, numbers =>
             {
                 var max = numbers.Max();
                 var min = numbers.Min();
 
                 return max - min;
-            }));
+            });
         }
 
         /// <summary>
@@ -39,14 +38,14 @@ namespace advent2017.Days
         /// <returns></returns>
         public int Part2(string input)
         {
-            return input.Lines().Sum(z => ProcessLine(z, numbers =>
+            return ProcessLine(input, numbers =>
             {
                 return numbers.SelectMany(x => numbers, (x, y) => new {x, y})
                     .Where(t => t.x != t.y)
                     .Where(t => t.x % t.y == 0)
                     .Select(t => t.x / t.y)
                     .FirstOrDefault();
-            }));
+            });
         }
     }
 }

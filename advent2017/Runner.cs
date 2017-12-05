@@ -21,6 +21,9 @@ namespace advent2017 {
 				case "day04":
 					Day04(args.NthOrDefault(1));
 					break;
+				case "day05":
+					Day05(args.NthOrDefault(1));
+					break;
 			}
 		}
 
@@ -30,6 +33,7 @@ namespace advent2017 {
 			Day02();
 			Day03();
 			Day04();
+			Day05();
 		}
 
 		private static void Day<TDay>(int day, string input)
@@ -67,36 +71,45 @@ namespace advent2017 {
 		}
 
 		private static void Day01(string input = null) {
-			if (input == null)
-			{
+			if (input == null) {
 				input = DayData.Day01;
 			}
 
 			Day<Day01>(1, input);
 		}
+
 		private static void Day02(string input = null) {
-			if (input == null)
-			{
+			if (input == null) {
 				input = DayData.Day02;
 			}
 
 			Day<Day02>(2, input);
 		}
+
 		private static void Day03(string input = null) {
-			if (input == null)
-			{
+			if (input == null) {
 				input = DayData.Day03;
 			}
 
 			Day<Day03>(3, input);
 		}
+
 		private static void Day04(string input = null) {
-			if (input == null)
-			{
+			if (input == null) {
 				input = DayData.Day04;
 			}
 
 			Day<Day04>(4, input);
 		}
+
+		private static void Day05(string input = null) {
+			if (input == null) {
+				input = DayData.Day05;
+			}
+
+			Day<Day05>(5, input);
+		}
+
 	}
 }
+
