@@ -1,8 +1,4 @@
-﻿namespace advent2017.Data
-{
-    public static partial class DayData
-    {
-        public static string Day05 = @"2
+﻿2
 2
 0
 0
@@ -1036,6 +1032,4 @@
 -109
 -181
 -547
--852";
-    }
-}
+-852

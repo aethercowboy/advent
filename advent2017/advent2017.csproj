@@ -6,10 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Data\DayData.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DayData.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Data\DayData.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DayData.tt</DependentUpon>
+    </Compile>
     <Compile Update="Runner.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -18,6 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\DayData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DayData.cs</LastGenOutput>
+    </None>
     <None Update="Runner.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Runner.cs</LastGenOutput>

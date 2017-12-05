@@ -1,8 +1,4 @@
-﻿namespace advent2017.Data
-{
-    public static partial class DayData
-    {
-        public static string Day04 = @"nyot babgr babgr kqtu kqtu kzshonp ylyk psqk
+﻿nyot babgr babgr kqtu kqtu kzshonp ylyk psqk
 iix ewj rojvbkk phrij iix zuajnk tadv givslju ewj bda
 isjur jppvano vctnpjp ngwzdq pxqfrk mnxxes zqwgnd giqh
 ojufqke gpd olzirc jfao cjfh rcivvw pqqpudp
@@ -513,6 +509,4 @@ nvifbx jbowbj fnyskt jbowbj xvun xvun
 piyl haajm stwzpp xvjg amjah
 gye efwwwiv kyv zmtcgmi ifwvwew
 dflx gdtb jyoj jyoj dflx aqhycgi xffnn
-inc mpys mzqmcwx vryz ibqrzc pmsy fat rojpxwy rcbqzi gjef";
-    }
-}
+inc mpys mzqmcwx vryz ibqrzc pmsy fat rojpxwy rcbqzi gjef
