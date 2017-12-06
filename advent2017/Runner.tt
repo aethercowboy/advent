@@ -9,7 +9,7 @@ using advent2017.Days;
 using advent2017.Extensions;
 using System;
 
-<# var current = 5; #>
+<# var current = 6; #>
 <# var range = Enumerable.Range(1,current); #>
 <# var callers = new List<string>(); #>
 <# var methods = new List<string>(); #>

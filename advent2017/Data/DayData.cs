@@ -11,5 +11,6 @@ namespace advent2017.Data {
 		public static string Day03 = LoadFile(nameof(Day03));
 		public static string Day04 = LoadFile(nameof(Day04));
 		public static string Day05 = LoadFile(nameof(Day05));
+		public static string Day06 = LoadFile(nameof(Day06));
 	}
 }

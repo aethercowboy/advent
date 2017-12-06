@@ -5,7 +5,7 @@ using advent2017.Extensions;
 
 namespace advent2017.Days
 {
-    public class Day02 : IDay
+    public class Day02 : Day
     {
         private static int ProcessLine(string input, Func<IList<int>, int> numberFunc)
         {
@@ -18,7 +18,7 @@ namespace advent2017.Days
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public int Part1(string input)
+        public override int Part1(string input)
         {
             return ProcessLine(input, numbers =>
             {
@@ -36,7 +36,7 @@ namespace advent2017.Days
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public int Part2(string input)
+        public override int Part2(string input)
         {
             return ProcessLine(input, numbers =>
             {

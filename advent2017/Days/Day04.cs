@@ -4,7 +4,7 @@ using advent2017.Extensions;
 
 namespace advent2017.Days
 {
-    public class Day04 : IDay
+    public class Day04 : Day
     {
         private static int Part0(string input, Func<string, string> selectFunc)
         {
@@ -15,12 +15,12 @@ namespace advent2017.Days
                     .All(x => x.Count() == 1));
         }
 
-        public int Part1(string input)
+        public override int Part1(string input)
         {
             return Part0(input, x => x);
         }
 
-        public int Part2(string input)
+        public override int Part2(string input)
         {
             return Part0(input, x => new string(x.OrderBy(y => y).ToArray()));
         }

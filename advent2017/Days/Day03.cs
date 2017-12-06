@@ -5,7 +5,7 @@ using advent2017.Extensions;
 
 namespace advent2017.Days
 {
-    public class Day03 : IDay
+    public class Day03 : Day
     {
         private static Tuple<int, int> GetPosition(int n)
         {
@@ -102,7 +102,7 @@ namespace advent2017.Days
             return 0;
         }
 
-        public int Part1(string input)
+        public override int Part1(string input)
         {
             var num = input.ToInt();
 
@@ -111,7 +111,7 @@ namespace advent2017.Days
             return Math.Abs(pos.Item1) + Math.Abs(pos.Item2);
         }
 
-        public int Part2(string input)
+        public override int Part2(string input)
         {
             var num = input.ToInt();
 

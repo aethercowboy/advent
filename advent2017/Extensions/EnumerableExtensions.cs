@@ -12,5 +12,10 @@ namespace advent2017.Extensions
                     : list.Skip(index).FirstOrDefault()
                 ;
         }
+
+        public static string AsString(this IEnumerable<int>list)
+        {
+            return string.Join(",", list);
+        }
     }
 }

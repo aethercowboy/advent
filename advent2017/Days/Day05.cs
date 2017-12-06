@@ -5,7 +5,7 @@ using advent2017.Extensions;
 
 namespace advent2017.Days
 {
-    public class Day05 : IDay
+    public class Day05 : Day
     {
         private static IList<int> BuildList(string input)
         {
@@ -33,12 +33,12 @@ namespace advent2017.Days
             return steps;
         }
 
-        public int Part1(string input)
+        public override int Part1(string input)
         {
             return NavigateList(input, x=> x + 1);
         }
 
-        public int Part2(string input)
+        public override int Part2(string input)
         {
             return NavigateList(input, x =>
                 x >= 3

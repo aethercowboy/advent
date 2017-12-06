@@ -6,7 +6,7 @@
 <#@ output extension=".cs" #>
 using System.IO;
 
-<# var count = 5; #>
+<# var count = 6; #>
 <# var range = Enumerable.Range(1,count); #>
 
 namespace advent2017.Data {

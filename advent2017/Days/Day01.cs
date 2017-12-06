@@ -2,7 +2,7 @@
 
 namespace advent2017.Days
 {
-    public class Day01 : IDay
+    public class Day01 : Day
     {
         public int Part0(string input, Func<int,int, int> nextIdxFunc)
         {
@@ -33,7 +33,7 @@ namespace advent2017.Days
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public int Part1(string input)
+        public override int Part1(string input)
         {
             return Part0(input, (i, l) => (i + 1) % l);
         }
@@ -44,7 +44,7 @@ namespace advent2017.Days
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public int Part2(string input)
+        public override int Part2(string input)
         {
             return Part0(input, (i, l) => (i + l / 2) % l);
         }
