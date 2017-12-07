@@ -1,7 +1,7 @@
 ﻿using advent.Days._2015;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace advent.tests.Days
+namespace advent.tests.Days._2015
 {
     [TestClass]
     public class Day09Tests : DayTests<Day09>

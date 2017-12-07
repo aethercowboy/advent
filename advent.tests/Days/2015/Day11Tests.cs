@@ -1,15 +1,11 @@
-﻿using System;
-using advent.Days._2015;
-using advent.IO;
+﻿using advent.Days._2015;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace advent.tests.Days
+namespace advent.tests.Days._2015
 {
     [TestClass]
     public class Day11Tests : DayTests<Day11>
     {
-        private string _password = string.Empty;
-
         [TestInitialize]
         public void Initi()
         {
@@ -21,15 +17,7 @@ namespace advent.tests.Days
         {
             var result = Client.Part1("abcdefgh");
             Assert.AreEqual(1, result);
-            Assert.AreEqual("abcdffaa", _password);
-        }
-
-        private void OnWrote(object sender, EventArgs e)
-        {
-            if (e is ConsoleEventArgs f)
-            {
-                _password = f.Message;
-            }
+            Assert.AreEqual("abcdffaa", Output);
         }
 
         [TestMethod]
@@ -37,7 +25,7 @@ namespace advent.tests.Days
         {
             var result = Client.Part1("ghijklmn");
             Assert.AreEqual(1, result);
-            Assert.AreEqual("ghjaabcc", _password);
+            Assert.AreEqual("ghjaabcc", Output);
         }
 
         [TestMethod]
