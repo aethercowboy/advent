@@ -4,22 +4,19 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
-<# var years = new List<int>{2017}; #>
+<# var years = new List<int>{2015, 2017}; #>
 <# var current = 25; #>
 <# var range = Enumerable.Range(1,current); #>
 <# var callers = new List<string>(); #>
-<# var methods = new List<string>(); #>
+<# var methods = new Dictionary<int, List<string>>(); #>
 using advent.Data;
 using advent.Days;
-<# foreach (var y in years) { #>
-using advent.Days._<#= y #>;
-<# } #>
 using advent.Extensions;
 using System;
 using System.Linq;
 
 namespace advent {
-	public abstract class Runner {
+	public static class Runner {
 		public static void Run(string[] args) {
 			switch (args[0]) {
 <# foreach (var y in years) { #>
@@ -81,36 +78,37 @@ namespace advent {
 	}
 
 <# foreach (var y in years) { #>
-	public abstract class Runner<#= y #> {
+	public static class Runner<#= y #> {
 		public static void Run(string[] args) {
-			switch (args[0])
-			{
+			switch (args[0]) {
 <# foreach (var n in range) { #>
 <# var num = n.ToString("D2"); #>
 				case "day<#= num #>":
 					Day<#= num #>(args.NthOrDefault(1));
 					break;
 <# callers.Add($"Day{num}();"); #>
-<# methods.Add(Generate(y, n, num)); #>
+<# if (!methods.ContainsKey(y)) { #>
+<# methods.Add(y, new List<string>()); #>
+<# } #> 
+<# methods[y].Add(Generate(y, n, num)); #>
 <# } #>
 			}
 		}
 
 		public static void RunAll() {
-			Console.WriteLine("Running All");
+		Console.WriteLine("Running All");
 <# foreach (var caller in callers) { #>
 			<#= caller #>
 <# } #>
 		}
 
-<# foreach (var method in methods) { #>
+<# foreach (var method in methods[y]) { #>
 		<#= method #>
 <# } #>
 	}
-
 <# } #>
 
-	namespace Data {
+namespace Data {
 <# foreach (var y in years) { #>
 		public static class DayData<#= y #>
 		{
@@ -124,13 +122,14 @@ namespace advent {
 	}
 }
 
+
 <#+ 
 public string Generate(int y, int n, string num) { 
 return $"private static void Day{num}(string input = null) {{\n" +
 	"\t\t\tif (input == null) {\n" +
 	$"\t\t\t\tinput = DayData{y}.Day{num};\n" +
 	"\t\t\t}\n\n" +
-	$"\t\t\tRunner.Day<Day{num}>({n}, input);\n" +
+	$"\t\t\tRunner.Day<Days._{y}.Day{num}>({n}, input);\n" +
 	"\t\t}\n"
 ;
 	//return $"private static void Day{num}(string input = null) { if (input == null) { input = DayData.Day{num}; }	Day<Day{num}>({n}, input);}";

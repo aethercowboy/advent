@@ -2,7 +2,7 @@
 
 namespace advent.Data
 {
-    public static partial class DayData
+    public static class DayData
     {
         public static string LoadFile(int year, string day)
         {

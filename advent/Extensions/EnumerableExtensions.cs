@@ -17,5 +17,30 @@ namespace advent.Extensions
         {
             return string.Join(",", list);
         }
+
+        public static IEnumerable<IList<string>> GenerateRoutes(this IList<string> locs)
+        {
+            var list = new List<IList<string>>();
+
+            if (locs.Count == 1)
+            {
+                list.Add(locs);
+                return list;
+            }
+
+            foreach (var loc in locs)
+            {
+                var subLocs = locs.Where(x => x != loc).ToList();
+                var subRoutes = GenerateRoutes(subLocs);
+                foreach (var subRoute in subRoutes)
+                {
+                    var subList = new List<string> { loc };
+                    subList.AddRange(subRoute);
+                    list.Add(subList);
+                }
+            }
+
+            return list;
+        }
     }
 }
