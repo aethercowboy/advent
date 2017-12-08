@@ -102,11 +102,11 @@ namespace advent.Days._2017
                 .FirstOrDefault()?
                 .TotalWeight;
 
-            var offset = unbalanced.Where(x => x.TotalWeight != goal)
+            var value = unbalanced.Where(x => x.TotalWeight != goal)
                 .Select(x => x.Weight - x.TotalWeight + goal)
                 .FirstOrDefault();
 
-            return offset.GetValueOrDefault();
+            return value.GetValueOrDefault();
         }
 
         public override int Part1(string input)
