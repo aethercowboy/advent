@@ -12,6 +12,7 @@ Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3";
         [TestMethod]
         public void Test01()
         {
+            Assert.Inconclusive("Still working on it");
             var result = Client.Part1(Input);
             Assert.AreEqual(62842880, result);
         }
