@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using advent.Collections;
 
 namespace advent.Extensions
 {
@@ -41,6 +42,11 @@ namespace advent.Extensions
             }
 
             return list;
+        }
+
+        public static IRing<T> ToRing<T>(this IEnumerable<T> collection)
+        {
+            return new Ring<T>(collection.ToList());
         }
     }
 }

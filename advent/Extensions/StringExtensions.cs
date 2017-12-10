@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace advent.Extensions
 {
@@ -41,6 +42,11 @@ namespace advent.Extensions
             return strs?.Select(ToInt)
                    ?? Enumerable.Empty<int>()
                 ;
+        }
+
+        public static IEnumerable<byte> ToBytes(this string str)
+        {
+            return Encoding.ASCII.GetBytes(str);
         }
     }
 }
