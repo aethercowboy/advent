@@ -7,7 +7,7 @@ namespace advent
     {
         private static void Main(string[] args)
         {
-            args = new[] {"2017", "day10"};
+            args = new[] {"2017", "day11"};
 
             if (!args.Any())
             {

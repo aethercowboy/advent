@@ -8,9 +8,8 @@ namespace advent.Days._2017
     {
         private class Group
         {
-            public Group Parent { get; set; }
-            public IList<Group> Children { get; set; } = new List<Group>();
-            public int Garbage { get; set; }
+            public Group Parent { private get; set; }
+            public IList<Group> Children { get; } = new List<Group>();
 
             public int Score => (Parent?.Score).GetValueOrDefault() + 1;
 
