@@ -48,5 +48,11 @@ namespace advent.Extensions
         {
             return Encoding.ASCII.GetBytes(str);
         }
+
+        public static IEnumerable<string> Chunk(this string str, int length)
+        {
+            return Enumerable.Range(0, str.Length / length)
+                .Select(i => str.Substring(i * length, length));
+        }
     }
 }
