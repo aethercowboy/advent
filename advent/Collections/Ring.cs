@@ -22,7 +22,7 @@ namespace advent.Collections
         }
 
 
-        private readonly IList<T> _list;
+        protected readonly IList<T> _list;
 
         public IEnumerator<T> GetEnumerator()
         {
