@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using advent.Collections;
 using advent.Days._2017;
 
@@ -53,7 +52,7 @@ namespace advent.Extensions
 
         public static DancerList ToDancerList(this IEnumerable<char> collection)
         {
-            return new DancerList(collection);
+            return new DancerList(collection.ToList());
         }
     }
 }

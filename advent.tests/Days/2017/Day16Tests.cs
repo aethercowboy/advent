@@ -23,5 +23,12 @@ namespace advent.tests.Days._2017
             Client.Part1(input);
             Assert.AreEqual("baedc", Output);
         }
+
+        [TestMethod]
+        public void Test02()
+        {
+            var result = Client.Dance(input, 2);
+            Assert.AreEqual("ceadb", result);
+        }
     }
 }
