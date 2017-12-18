@@ -73,6 +73,21 @@ namespace advent.Collections
             _list.Insert(index % Count, item);
         }
 
+        public int InsertAfter(int index, T item)
+        {
+            var idx = index % Count + 1;
+            if (idx >= Count)
+            {
+                Add(item);
+            }
+            else
+            {
+                Insert(idx, item);
+            }
+
+            return idx;
+        }
+
         public void RemoveAt(int index)
         {
             _list.RemoveAt(index % Count);
