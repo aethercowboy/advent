@@ -145,12 +145,12 @@ namespace advent.Days._2017
                         {
                             if (Direction.Item1 < 0) // We're Moving Up and Not at Top
                             {
-                                var up = Grid[CurrentPosition.Item1 - 1][CurrentPosition.Item2];
+                                var up = GetValueAt(CurrentPosition.Item1 - 1, CurrentPosition.Item2);
                                 if (up != '|' && up != '+')
                                 {
                                     if (up == '-')
                                     {
-                                        var up2 = Grid[CurrentPosition.Item1 - 2][CurrentPosition.Item2];
+                                        var up2 = GetValueAt(CurrentPosition.Item1 - 2, CurrentPosition.Item2);
                                         if (up2 == '-')
                                         {
                                             break;
@@ -161,12 +161,11 @@ namespace advent.Days._2017
                             }
                             else if (Direction.Item1 > 0)
                             {
-                                var down = Grid[CurrentPosition.Item1 + 1][CurrentPosition.Item2];
-                                if (down != '|' && down != '+')
+                                var down = GetValueAt(CurrentPosition.Item1 + 1, CurrentPosition.Item2);                                if (down != '|' && down != '+')
                                 {
                                     if (down == '-')
                                     {
-                                        var down2 = Grid[CurrentPosition.Item1 + 2][CurrentPosition.Item2];
+                                        var down2 = GetValueAt(CurrentPosition.Item1 + 2, CurrentPosition.Item2);
                                         if (down2 == '-')
                                         {
                                             break;
@@ -180,12 +179,12 @@ namespace advent.Days._2017
                         {
                             if (Direction.Item2 < 0)
                             {
-                                var left = Grid[CurrentPosition.Item1][CurrentPosition.Item2 - 1];
+                                var left = GetValueAt(CurrentPosition.Item1, CurrentPosition.Item2 - 1);
                                 if (left != '-' && left != '+')
                                 {
                                     if (left == '|')
                                     {
-                                        var left2 = Grid[CurrentPosition.Item1][CurrentPosition.Item2 - 2];
+                                        var left2 = GetValueAt(CurrentPosition.Item1, CurrentPosition.Item2 - 2);
                                         if (left2 == '-')
                                         {
                                             break;
@@ -196,12 +195,12 @@ namespace advent.Days._2017
                             }
                             else if (Direction.Item2 > 0)
                             {
-                                var right = Grid[CurrentPosition.Item1][CurrentPosition.Item2 + 1];
+                                var right = GetValueAt(CurrentPosition.Item1, CurrentPosition.Item2 + 1);
                                 if (right != '-' && right != '+')
                                 {
                                     if (right == '|')
                                     {
-                                        var right2 = Grid[CurrentPosition.Item1][CurrentPosition.Item2 + 2];
+                                        var right2 = GetValueAt(CurrentPosition.Item1, CurrentPosition.Item2 + 2);
                                         if (right2 == '-')
                                         {
                                             break;
