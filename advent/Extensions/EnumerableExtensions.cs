@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using advent.Collections;
 using advent.Days._2017;
@@ -53,6 +54,13 @@ namespace advent.Extensions
         public static DancerList ToDancerList(this IEnumerable<char> collection)
         {
             return new DancerList(collection.ToList());
+        }
+
+        public static IEnumerable<T> WithMin<T>(this IEnumerable<T> collection, Func<T, int> minFunc)
+        {
+            var cList = collection.ToList();
+            var min = cList.Min(minFunc);
+            return cList.Where(x => minFunc(x) == min);
         }
     }
 }

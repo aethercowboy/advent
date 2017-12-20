@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace advent.Extensions
 {
@@ -61,6 +62,17 @@ namespace advent.Extensions
         public static Tuple<int, int> MoveDown(this Tuple<int, int> tuple)
         {
             return tuple.MoveDirection(Direction.Down);
+        }
+    }
+
+    public static class VectorExtensions
+    {
+        public static int ManhattanDistance(this Vector3 vect)
+        {
+            return (int)(Math.Abs(vect.X)
+                   + Math.Abs(vect.Y)
+                   + Math.Abs(vect.Z))
+                ;
         }
     }
 }
