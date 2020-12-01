@@ -10,7 +10,7 @@ namespace advent.tests.Days
         protected TDay Client;
         protected string Output = string.Empty;
 
-        public DayTests()
+        protected DayTests()
         {
             Client = new TDay();
             Client.Console.Wrote += OnWrote;

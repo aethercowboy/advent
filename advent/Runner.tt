@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
-<# var years = new List<int>{2015, 2017}; #>
+<# var years = new List<int>{2015, 2017, 2020}; #>
 <# var current = 25; #>
 <# var range = Enumerable.Range(1,current); #>
 <# var callers = new List<string>(); #>
@@ -24,6 +24,9 @@ namespace advent {
 					Runner<#= y #>.Run(args.Skip(1).ToArray());
 					break;
 <# } #>
+				default:
+					Console.WriteLine($"Unable to find year {args[0]}.");
+					break;
 			}
 		}
 
