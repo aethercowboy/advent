@@ -1,105 +1,104 @@
 ﻿using advent.Days._2015;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2015
 {
-    [TestClass]
-    public class Day12Tests :DayTests<Day12>
+    public class Day12Tests : DayTests<Day12>
     {
-        [TestMethod]
+        [Fact]
 
         public void Test01()
         {
             var result = Client.Part1("[1,2,3]");
-            Assert.AreEqual(6, result);
+            Assert.Equal(6, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test02()
         {
             var result = Client.Part1("{\"a\":2,\"b\":4}");
-            Assert.AreEqual(6, result);
+            Assert.Equal(6, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test03()
         {
             var result = Client.Part1("[[[3]]]");
-            Assert.AreEqual(3, result);
+            Assert.Equal(3, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test04()
         {
             var result = Client.Part1("{\"a\":{\"b\":4},\"c\":-1}");
-            Assert.AreEqual(3, result);
+            Assert.Equal(3, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test05()
         {
             var result = Client.Part1("{\"a\":[-1,1]}");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test06()
         {
             var result = Client.Part1("[-1,{\"a\":1}]");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test07()
         {
             var result = Client.Part1("[]");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test08()
         {
             var result = Client.Part1("{}");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test09()
         {
             var result = Client.Part2("[1,2,3]");
-            Assert.AreEqual(6, result);
+            Assert.Equal(6, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test10()
         {
             var result = Client.Part2("[1,{\"c\":\"red\",\"b\":2},3]");
-            Assert.AreEqual(4, result);
+            Assert.Equal(4, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test11()
         {
             var result = Client.Part2("{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
 
         public void Test12()
         {
             var result = Client.Part2("[1,\"red\",5]");
-            Assert.AreEqual(6, result);
+            Assert.Equal(6, result);
         }
     }
 }

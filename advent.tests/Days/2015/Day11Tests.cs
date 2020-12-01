@@ -1,71 +1,69 @@
 ﻿using advent.Days._2015;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2015
 {
-    [TestClass]
     public class Day11Tests : DayTests<Day11>
     {
-        [TestInitialize]
-        public void Initi()
+        public Day11Tests()
         {
             Client.Console.Wrote += OnWrote;
         }
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             var result = Client.Part1("abcdefgh");
-            Assert.AreEqual(1, result);
-            Assert.AreEqual("abcdffaa", Output);
+            Assert.Equal(1, result);
+            Assert.Equal("abcdffaa", Output);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part1("ghijklmn");
-            Assert.AreEqual(1, result);
-            Assert.AreEqual("ghjaabcc", Output);
+            Assert.Equal(1, result);
+            Assert.Equal("ghjaabcc", Output);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test03()
         {
             var result = Client.IsEightCharacters("abcdefgh");
-            Assert.IsTrue(result);
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test04()
         {
             const string input = "hijklmmn";
 
             var result = Client.HasOneIncreasingStraight(input);
-            Assert.IsTrue(result);
+            Assert.True(result);
 
             result = Client.DoesNotHaveILO(input);
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test05()
         {
             const string input = "abbceffg";
 
             var result = Client.HasTwoNonOverlappingPairsOfLetters(input);
-            Assert.IsTrue(result);
+            Assert.True(result);
 
             result = Client.HasOneIncreasingStraight(input);
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test06()
         {
             const string input = "abbcegjk";
 
             var result = Client.HasTwoNonOverlappingPairsOfLetters(input);
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
     }
 }

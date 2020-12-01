@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using advent.Days._2017;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
     public class Day14Tests : DayTests<Day14>
     {
         private string input = "flqrgnkx";
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             var result = Client.Part1(input);
-            Assert.AreEqual(8108, result);
+            Assert.Equal(8108, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part2(input);
-            Assert.AreEqual(1242, result);
+            Assert.Equal(1242, result);
         }
     }
 }

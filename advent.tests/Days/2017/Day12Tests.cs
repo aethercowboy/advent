@@ -1,9 +1,8 @@
 ﻿using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
     public class Day12Tests : DayTests<Day12>
     {
         private const string Input = @"0 <-> 2
@@ -14,18 +13,18 @@ namespace advent.tests.Days._2017
 5 <-> 6
 6 <-> 4, 5";
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             var result = Client.Part1(Input);
-            Assert.AreEqual(6, result);
+            Assert.Equal(6, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part2(Input);
-            Assert.AreEqual(2, result);
+            Assert.Equal(2, result);
         }
     }
 }

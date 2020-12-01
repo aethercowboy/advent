@@ -1,27 +1,26 @@
 ﻿using advent.Data;
 using advent.Days._2015;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2015
 {
-    [TestClass]
     public class Day08Tests : DayTests<Day08>
     {
         private string input = DayData.LoadFile(2015, "Day08");
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
 
             var result = Client.Part1(input);
-            Assert.AreEqual(12, result);
+            Assert.Equal(12, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part2(input);
-            Assert.AreEqual(19, result);
+            Assert.Equal(19, result);
         }
     }
 }

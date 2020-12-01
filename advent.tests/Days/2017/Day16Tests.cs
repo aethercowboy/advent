@@ -1,34 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using advent.Days._2017;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
-    public class Day16Tests :DayTests<Day16>
+    public class Day16Tests : DayTests<Day16>
     {
         public string input = @"s1,x3/4,pe/b";
 
-        [TestInitialize]
-        public void Init()
+        public Day16Tests()
         {
             Client.Dancers = "abcde";
         }
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             Client.Part1(input);
-            Assert.AreEqual("baedc", Output);
+            Assert.Equal("baedc", Output);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Dance(input, 2);
-            Assert.AreEqual("ceadb", result);
+            Assert.Equal("ceadb", result);
         }
     }
 }

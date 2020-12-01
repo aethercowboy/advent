@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using advent.Days._2017;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
     public class Day19Tests : DayTests<Day19>
     {
         public string input = @"     |          
@@ -16,18 +12,18 @@ namespace advent.tests.Days._2017
      |  |  |  D 
      +B-+  +--+ ";
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             Client.Part1(input);
-            Assert.AreEqual("ABCDEF", Output);
+            Assert.Equal("ABCDEF", Output);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part2(input);
-            Assert.AreEqual(38, result);
+            Assert.Equal(38, result);
         }
     }
 }

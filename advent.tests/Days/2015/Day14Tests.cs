@@ -1,29 +1,28 @@
 ﻿using advent.Days._2015;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2015
 {
-    [TestClass]
     public class Day14Tests : DayTests<Day14>
     {
         private const string Input = @"Comet can fly 14 km/s for 10 seconds, but then must rest for 127 seconds.
 Dancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.";
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             Client.Runtime = 1000;
 
             var result = Client.Part1(Input);
-            Assert.AreEqual(1120, result);
+            Assert.Equal(1120, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             Client.Runtime = 1000;
             var result = Client.Part2(Input);
-            Assert.AreEqual(689, result);
+            Assert.Equal(689, result);
         }
     }
 }

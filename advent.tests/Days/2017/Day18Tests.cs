@@ -1,12 +1,11 @@
 ﻿using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
     public class Day18Tests : DayTests<Day18>
     {
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             const string input = @"set a 1
@@ -20,10 +19,10 @@ jgz a -1
 set a 1
 jgz a -2";
             var result = Client.Part1(input);
-            Assert.AreEqual(4, result);
+            Assert.Equal(4, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             const string input = @"snd 1
@@ -36,7 +35,7 @@ rcv d
 rcv e
 rcv f";
             var result = Client.Part2(input);
-            Assert.AreEqual(3, result);
+            Assert.Equal(3, result);
         }
     }
 }

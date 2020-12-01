@@ -1,90 +1,87 @@
-﻿using System;
-using advent.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using advent.Extensions;
+using System;
+using Xunit;
 
 namespace advent.tests.Extensions
 {
-    [TestClass]
     public class TupleExtensionsTests
     {
         private Tuple<int, int> _tuple;
-
-        [TestInitialize]
-        public void Setup()
+        public TupleExtensionsTests()
         {
             _tuple = new Tuple<int, int>(0, 0);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveRight_null()
         {
-            var result = ((Tuple<int, int>) null).MoveRight();
-            Assert.IsNull(result);
+            var result = ((Tuple<int, int>)null).MoveRight();
+            Assert.Null(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveRight_Tuple()
         {
             var result = _tuple.MoveRight();
-            Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.Item1);
-            Assert.AreEqual(0, result.Item2);
+            Assert.NotNull(result);
+            Assert.Equal(1, result.Item1);
+            Assert.Equal(0, result.Item2);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveLeft_null()
         {
-            var result = ((Tuple<int, int>) null).MoveLeft();
-            Assert.IsNull(result);
+            var result = ((Tuple<int, int>)null).MoveLeft();
+            Assert.Null(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveLeft_Tuple()
         {
             var result = _tuple.MoveLeft();
-            Assert.IsNotNull(result);
-            Assert.AreEqual(-1, result.Item1);
-            Assert.AreEqual(0, result.Item2);
+            Assert.NotNull(result);
+            Assert.Equal(-1, result.Item1);
+            Assert.Equal(0, result.Item2);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveUp_null()
         {
-            var result = ((Tuple<int, int>) null).MoveUp();
-            Assert.IsNull(result);
+            var result = ((Tuple<int, int>)null).MoveUp();
+            Assert.Null(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveUp_Tuple()
         {
             var result = _tuple.MoveUp();
-            Assert.IsNotNull(result);
-            Assert.AreEqual(0, result.Item1);
-            Assert.AreEqual(1, result.Item2);
+            Assert.NotNull(result);
+            Assert.Equal(0, result.Item1);
+            Assert.Equal(1, result.Item2);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveDown_null()
         {
-            var result = ((Tuple<int, int>) null).MoveDown();
-            Assert.IsNull(result);
+            var result = ((Tuple<int, int>)null).MoveDown();
+            Assert.Null(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveDown_Tuple()
         {
             var result = _tuple.MoveDown();
-            Assert.IsNotNull(result);
-            Assert.AreEqual(0, result.Item1);
-            Assert.AreEqual(-1, result.Item2);
+            Assert.NotNull(result);
+            Assert.Equal(0, result.Item1);
+            Assert.Equal(-1, result.Item2);
         }
 
-        [TestMethod]
+        [Fact]
         public void MoveInCircle()
         {
             var result = _tuple.MoveUp().MoveLeft().MoveDown().MoveRight();
-            Assert.IsNotNull(result);
-            Assert.AreEqual(result, _tuple);
+            Assert.NotNull(result);
+            Assert.Equal(result, _tuple);
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using advent.Days._2015;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2015
 {
-    [TestClass]
     public class Day07Tests : DayTests<Day07>
     {
         private const string Input = @"123 -> x
@@ -15,75 +14,75 @@ y RSHIFT 2 -> g
 NOT x -> h
 NOT y -> i";
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             Client.Key = "d";
             var result = Client.Part1(Input);
-            Assert.AreEqual(72, result);
+            Assert.Equal(72, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             Client.Key = "e";
             var result = Client.Part1(Input);
-            Assert.AreEqual(507, result);
+            Assert.Equal(507, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test03()
         {
             Client.Key = "f";
             var result = Client.Part1(Input);
-            Assert.AreEqual(492, result);
+            Assert.Equal(492, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test04()
         {
             Client.Key = "g";
             var result = Client.Part1(Input);
-            Assert.AreEqual(114, result);
+            Assert.Equal(114, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test05()
         {
             Client.Key = "h";
             var result = Client.Part1(Input);
-            Assert.AreEqual(65412, result);
+            Assert.Equal(65412, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test06()
         {
-            Client.Key = "i";  
+            Client.Key = "i";
             var result = Client.Part1(Input);
-            Assert.AreEqual(65079, result);
+            Assert.Equal(65079, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test07()
         {
             Client.Key = "x";
             var result = Client.Part1(Input);
-            Assert.AreEqual(123, result);
+            Assert.Equal(123, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test08()
         {
             Client.Key = "y";
             var result = Client.Part1(Input);
-            Assert.AreEqual(456, result);
+            Assert.Equal(456, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test09()
         {
             var result = Client.Part1("NOT 1 -> a");
-            Assert.AreEqual(65534, result);
+            Assert.Equal(65534, result);
         }
     }
 }

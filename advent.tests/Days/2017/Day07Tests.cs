@@ -1,9 +1,8 @@
 ﻿using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
     public class Day07Tests : DayTests<Day07>
     {
         private const string Input = @"pbga (66)
@@ -20,20 +19,20 @@ ugml (68) -> gyxo, ebii, jptl
 gyxo (61)
 cntj (57)";
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             Client.Part1(Input);
 
-            Assert.AreEqual("tknk", Output);
+            Assert.Equal("tknk", Output);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part2(Input);
 
-            Assert.AreEqual(60, result);
+            Assert.Equal(60, result);
         }
     }
 }

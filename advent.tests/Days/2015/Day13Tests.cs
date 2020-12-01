@@ -1,10 +1,9 @@
 ﻿using advent.Days._2015;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2015
 {
-    [TestClass]
-    public class Day13Tests :DayTests<Day13>
+    public class Day13Tests : DayTests<Day13>
     {
         private string input = @"Alice would gain 54 happiness units by sitting next to Bob.
 Alice would lose 79 happiness units by sitting next to Carol.
@@ -19,11 +18,11 @@ David would gain 46 happiness units by sitting next to Alice.
 David would lose 7 happiness units by sitting next to Bob.
 David would gain 41 happiness units by sitting next to Carol.";
 
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             var result = Client.Part1(input);
-            Assert.AreEqual(330, result);
+            Assert.Equal(330, result);
         }
     }
 }

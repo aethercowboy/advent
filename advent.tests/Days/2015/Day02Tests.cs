@@ -1,37 +1,36 @@
 ﻿using advent.Days._2015;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2015
 {
-    [TestClass]
     public class Day02Tests : DayTests<Day02>
     {
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             var result = Client.Part1("2x3x4");
-            Assert.AreEqual(58, result);
+            Assert.Equal(58, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part1("1x1x10");
-            Assert.AreEqual(43, result);
+            Assert.Equal(43, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test03()
         {
             var result = Client.Part2("2x3x4");
-            Assert.AreEqual(34, result);
+            Assert.Equal(34, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test04()
         {
             var result = Client.Part2("1x1x10");
-            Assert.AreEqual(14, result);
+            Assert.Equal(14, result);
         }
     }
 }

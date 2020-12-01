@@ -1,118 +1,114 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using advent.Days._2017;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
     public class Day09Tests : DayTests<Day09>
     {
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             var result = Client.Part1("{}");
-            Assert.AreEqual(1, result);
+            Assert.Equal(1, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part1("{{{}}}");
-            Assert.AreEqual(6, result);
+            Assert.Equal(6, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test03()
         {
             var result = Client.Part1("{{},{}}");
-            Assert.AreEqual(5, result);
+            Assert.Equal(5, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test04()
         {
             var result = Client.Part1("{{{},{},{{}}}}");
-            Assert.AreEqual(16, result);
+            Assert.Equal(16, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test05()
         {
             var result = Client.Part1("{<a>,<a>,<a>,<a>}");
-            Assert.AreEqual(1, result);
+            Assert.Equal(1, result);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void Test06()
         {
             var result = Client.Part1("{{<ab>},{<ab>},{<ab>},{<ab>}}");
-            Assert.AreEqual(9, result);
+            Assert.Equal(9, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test07()
         {
             var result = Client.Part1("{{<!!>},{<!!>},{<!!>},{<!!>}}");
-            Assert.AreEqual(9, result);
+            Assert.Equal(9, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test08()
         {
             var result = Client.Part1("{{<a!>},{<a!>},{<a!>},{<ab>}}");
-            Assert.AreEqual(3, result);
+            Assert.Equal(3, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test09()
         {
             var result = Client.Part2("<>");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test10()
         {
             var result = Client.Part2("<random characters>");
-            Assert.AreEqual(17, result);
+            Assert.Equal(17, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test11()
         {
             var result = Client.Part2("<<<<>");
-            Assert.AreEqual(3, result);
+            Assert.Equal(3, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test12()
         {
             var result = Client.Part2("<{!>}>");
-            Assert.AreEqual(2, result);
+            Assert.Equal(2, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test13()
         {
             var result = Client.Part2("<!!>");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test14()
         {
             var result = Client.Part2("<!!!>>");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test15()
         {
             var result = Client.Part2("<{o\"i!a,<{i<a>");
-            Assert.AreEqual(10, result);
+            Assert.Equal(10, result);
         }
     }
 }

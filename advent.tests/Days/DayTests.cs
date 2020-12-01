@@ -1,7 +1,6 @@
-﻿using System;
-using advent.Days;
+﻿using advent.Days;
 using advent.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace advent.tests.Days
 {
@@ -11,8 +10,7 @@ namespace advent.tests.Days
         protected TDay Client;
         protected string Output = string.Empty;
 
-        [TestInitialize]
-        public void Startup()
+        public DayTests()
         {
             Client = new TDay();
             Client.Console.Wrote += OnWrote;

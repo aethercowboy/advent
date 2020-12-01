@@ -1,79 +1,78 @@
 ﻿using advent.Days._2017;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Days._2017
 {
-    [TestClass]
     public class Day03Tests : DayTests<Day03>
     {
-        [TestMethod]
+        [Fact]
         public void Test01()
         {
             var result = Client.Part1("1");
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test02()
         {
             var result = Client.Part1("12");
-            Assert.AreEqual(3, result);
+            Assert.Equal(3, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test03()
         {
             var result = Client.Part1("23");
-            Assert.AreEqual(2, result);
+            Assert.Equal(2, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test04()
         {
             var result = Client.Part1("1024");
-            Assert.AreEqual(31, result);
+            Assert.Equal(31, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test05()
         {
             var result = Client.Part2("1");
-            Assert.AreEqual(2, result);
+            Assert.Equal(2, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test06()
         {
             var result = Client.Part2("2");
-            Assert.AreEqual(4, result);
+            Assert.Equal(4, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test07()
         {
             var result = Client.Part2("4");
-            Assert.AreEqual(5, result);
+            Assert.Equal(5, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test08()
         {
             var result = Client.Part2("5");
-            Assert.AreEqual(10, result);
+            Assert.Equal(10, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test09()
         {
             var result = Client.Part2("10");
-            Assert.AreEqual(11, result);
+            Assert.Equal(11, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Test10()
         {
             var result = Client.Part2("11");
-            Assert.AreEqual(23, result);
+            Assert.Equal(23, result);
         }
     }
 }

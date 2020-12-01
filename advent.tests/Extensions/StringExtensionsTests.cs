@@ -1,269 +1,268 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace advent.tests.Extensions
 {
-    [TestClass]
     public class StringExtensionsTests
     {
-        [TestMethod]
+        [Fact]
         public void Lines_null()
         {
-            var result = ((string) null).Lines();
-            Assert.IsNotNull(result);
-            Assert.IsFalse(result.Any());
+            var result = ((string)null).Lines();
+            Assert.NotNull(result);
+            Assert.False(result.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void Lines_Empty()
         {
             var result = string.Empty.Lines();
-            Assert.IsNotNull(result);
-            Assert.IsFalse(result.Any());
+            Assert.NotNull(result);
+            Assert.False(result.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void Lines_OneLine()
         {
             var result = "This is a line".Lines().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(1, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(1, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void Lines_TwoLines()
         {
             var result = @"This is a line
 as is this".Lines().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(2, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(2, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void Lines_NewLine()
         {
             var result = "This is a line\nas is this".Lines().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(2, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(2, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void Lines_RandomLines()
         {
             var rnd = new Random();
             var i = Math.Abs(rnd.Next(1000));
             var str = string.Join("\n", Enumerable.Range(0, i).Select(x => "this is a line"));
             var result = str.Lines().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(i, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(i, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void Lines_CRLF()
         {
             var result = "This is a line\r\nas is this".Lines().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(result.First().Length, 14);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(2, result.Count);
+            Assert.Equal(result.First().Length, 14);
         }
 
-        [TestMethod]
+        [Fact]
         public void Lines_CR()
         {
             var result = "This is a line\ras is this".Lines().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(2, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(2, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrEmpty_null()
         {
-            var result = ((string) null).IsNullOrEmpty();
-            Assert.IsTrue(result);
+            var result = ((string)null).IsNullOrEmpty();
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrEmpty_Empty()
         {
             var result = string.Empty.IsNullOrEmpty();
-            Assert.IsTrue(result);
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrEmpty_Whitespace()
         {
             var result = "   ".IsNullOrEmpty();
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrEmpty_String()
         {
             var result = "this is a string".IsNullOrEmpty();
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrWhitespace_null()
         {
-            var result = ((string) null).IsNullOrWhitespace();
-            Assert.IsTrue(result);
+            var result = ((string)null).IsNullOrWhitespace();
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrWhitespace_Empty()
         {
             var result = string.Empty.IsNullOrWhitespace();
-            Assert.IsTrue(result);
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrWhitespace_Whitespace()
         {
             var result = "   ".IsNullOrWhitespace();
-            Assert.IsTrue(result);
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsNullOrWhitespace_String()
         {
             var result = "this is a string".IsNullOrWhitespace();
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Words_null()
         {
-            var result = ((string) null).Words();
-            Assert.IsNotNull(result);
-            Assert.IsFalse(result.Any());
+            var result = ((string)null).Words();
+            Assert.NotNull(result);
+            Assert.False(result.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void Words_Empty()
         {
             var result = string.Empty.Words();
-            Assert.IsNotNull(result);
-            Assert.IsFalse(result.Any());
+            Assert.NotNull(result);
+            Assert.False(result.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void Words_OneWord()
         {
             var result = "one".Words().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(1, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(1, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void Words_TwoWords()
         {
             var result = "two words".Words().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(2, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(2, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void Words_LotsOfSpace()
         {
             var result = "lots                of                  spaaaaaaaaaaaaaaace".Words().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(3, result.Count);
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(3, result.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInt_null()
         {
-            var result = ((string) null).ToInt();
-            Assert.AreEqual(0, result);
+            var result = ((string)null).ToInt();
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInt_Empty()
         {
             var result = string.Empty.ToInt();
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInt_One()
         {
             var result = "1".ToInt();
-            Assert.AreEqual(1, result);
+            Assert.Equal(1, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInt_Random()
         {
             var rnd = new Random();
             var i = rnd.Next();
             var result = i.ToString().ToInt();
-            Assert.AreEqual(i, result);
+            Assert.Equal(i, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInt_NotInt()
         {
             var result = "NaN".ToInt();
-            Assert.AreEqual(0, result);
+            Assert.Equal(0, result);
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInts_null()
         {
-            var result = ((IEnumerable<string>) null).ToInts();
-            Assert.IsNotNull(result);
-            Assert.IsFalse(result.Any());
+            var result = ((IEnumerable<string>)null).ToInts();
+            Assert.NotNull(result);
+            Assert.False(result.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInts_Empty()
         {
             var result = Enumerable.Empty<string>().ToInts();
-            Assert.IsNotNull(result);
-            Assert.IsFalse(result.Any());
+            Assert.NotNull(result);
+            Assert.False(result.Any());
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInts_One()
         {
-            var result = new[] {"1"}.ToInts().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(1, result.Count);
-            Assert.AreEqual(1, result.Sum());
+            var result = new[] { "1" }.ToInts().ToList();
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(1, result.Count);
+            Assert.Equal(1, result.Sum());
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInts_OneTwoThreeFour()
         {
-            var result = new[] {"1", "2", "3", "4"}.ToInts().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(4, result.Count);
-            Assert.AreEqual(10, result.Sum());
+            var result = new[] { "1", "2", "3", "4" }.ToInts().ToList();
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(4, result.Count);
+            Assert.Equal(10, result.Sum());
         }
 
-        [TestMethod]
+        [Fact]
         public void ToInts_OneTwoZeeFour()
         {
-            var result = new[] {"1", "2", "z", "4"}.ToInts().ToList();
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
-            Assert.AreEqual(4, result.Count);
-            Assert.AreEqual(7, result.Sum());
+            var result = new[] { "1", "2", "z", "4" }.ToInts().ToList();
+            Assert.NotNull(result);
+            Assert.True(result.Any());
+            Assert.Equal(4, result.Count);
+            Assert.Equal(7, result.Sum());
         }
     }
 }
