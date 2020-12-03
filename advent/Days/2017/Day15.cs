@@ -38,7 +38,7 @@ namespace advent.Days._2017
             return judge.Competition(generators, g => g.NextValue());
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var judge = new Judge(5_000_000);
             var generators = GetGenerators(input);

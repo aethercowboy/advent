@@ -32,7 +32,7 @@ namespace advent.Days._2020
             return 0;
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var data = input.Lines()
                 .Select(x => int.Parse(x))

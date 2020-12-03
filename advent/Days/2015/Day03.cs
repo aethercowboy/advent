@@ -5,7 +5,7 @@ namespace advent.Days._2015
 {
     public class Day03 : Day
     {
-        private static Tuple<int,int> Navigate(char c, Tuple<int, int> loc)
+        private static Tuple<int, int> Navigate(char c, Tuple<int, int> loc)
         {
             switch (c)
             {
@@ -66,7 +66,7 @@ namespace advent.Days._2015
             return Part0(input, santa);
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var santa = new Tuple<int, int>(0, 0);
             var robo = new Tuple<int, int>(0, 0);

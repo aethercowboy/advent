@@ -35,7 +35,7 @@ namespace advent.Days._2015
             return response.Length;
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             Generations = 50;
             return Part1(input);

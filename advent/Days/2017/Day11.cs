@@ -43,7 +43,7 @@ namespace advent.Days._2017
             return hex.DistanceToStart();
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var hex = Part0(input);
 

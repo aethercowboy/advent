@@ -34,7 +34,7 @@ namespace advent.Days._2017
             }
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var particles = Part0(input);
 

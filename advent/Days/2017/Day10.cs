@@ -75,7 +75,7 @@ namespace advent.Days._2017
             return response.ToHex();
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var response = KnotHash(input, List);
 

@@ -81,7 +81,7 @@ namespace advent.Days._2015
             return MaximizeHappiness(dict);
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var dict = new Dictionary<string, Dictionary<string, int>>();
 

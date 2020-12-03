@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -36,11 +36,11 @@ namespace advent.Days._2017
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             return ProcessLine(input, numbers =>
             {
-                return numbers.SelectMany(x => numbers, (x, y) => new {x, y})
+                return numbers.SelectMany(x => numbers, (x, y) => new { x, y })
                     .Where(t => t.x != t.y)
                     .Where(t => t.x % t.y == 0)
                     .Select(t => t.x / t.y)

@@ -62,7 +62,7 @@ namespace advent.Days._2015
             return letters.Select(x => new Regex($"{x}.{x}")).Any(x => x.IsMatch(input));
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             return Part0(input,
                 HasPairOfTwoLettersTwice,

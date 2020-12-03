@@ -124,7 +124,7 @@ namespace advent.Days._2015
             return maxCookie;
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var cookies = Part0(input);
 

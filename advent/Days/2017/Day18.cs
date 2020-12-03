@@ -16,7 +16,7 @@ namespace advent.Days._2017
             return duet.Part1(lines);
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var duet0 = new Duet(0);
             var duet1 = new Duet(1);

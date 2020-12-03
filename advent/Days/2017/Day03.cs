@@ -111,7 +111,7 @@ namespace advent.Days._2017
             return Math.Abs(pos.Item1) + Math.Abs(pos.Item2);
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var num = input.ToInt();
 

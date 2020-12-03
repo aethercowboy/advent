@@ -15,7 +15,7 @@ namespace advent.Days._2015
             return _numberRegex.Matches(input).Sum(x => x.Value.ToInt());
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var json = JToken.Parse($"[{input}]");
 

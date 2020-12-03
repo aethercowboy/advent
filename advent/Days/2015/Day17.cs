@@ -9,7 +9,7 @@ namespace advent.Days._2015
             throw new NotImplementedException();
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             throw new NotImplementedException();
         }

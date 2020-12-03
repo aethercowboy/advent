@@ -105,7 +105,7 @@ namespace advent.Days._2015
 
         private string Key { get; set; }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             Console.Wrote += OnWrote;
 

@@ -67,7 +67,7 @@ perfumes: 1
             return sue.Index;
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var aunts = Part0(input);
 

@@ -126,7 +126,7 @@ namespace advent.Days._2015
             return CalculateValue(dict, Key);
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             ValueDict.Clear();
 

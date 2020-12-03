@@ -67,7 +67,7 @@ namespace advent.Days._2015
             return Part0(input, x => x.Min());
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             return Part0(input, x => x.Max());
         }

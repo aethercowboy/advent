@@ -31,7 +31,7 @@ namespace advent.Days._2017
             return ring[i + 1];
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var steps = input.ToInt();
 

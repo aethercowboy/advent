@@ -77,7 +77,7 @@ namespace advent.Days._2017
             return 0;
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var result = Dance(input, 1_000_000_000);
 

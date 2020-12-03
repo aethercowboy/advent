@@ -42,7 +42,7 @@ namespace advent.Days._2015
             return Part0(input, 5);
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             return Part0(input, 6);
         }

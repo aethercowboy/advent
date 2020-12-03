@@ -20,7 +20,7 @@ namespace advent.Days._2017
             return Part0(input, x => x);
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             return Part0(input, x => new string(x.OrderBy(y => y).ToArray()));
         }

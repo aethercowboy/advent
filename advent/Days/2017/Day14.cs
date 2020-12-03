@@ -30,7 +30,7 @@ namespace advent.Days._2017
             return blocks.Sum(x => x.Count(y => y == '1'));
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var blocks = Part0(input).ToList();
 

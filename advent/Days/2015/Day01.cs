@@ -21,7 +21,7 @@ namespace advent.Days._2015
             return output;
         }
 
-        public override int Part2(string input)
+        public override long Part2(string input)
         {
             var floor = 0;
 
