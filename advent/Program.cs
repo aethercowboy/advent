@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace advent
 {
@@ -7,9 +6,9 @@ namespace advent
     {
         private static void Main(string[] args)
         {
-            args = new[] { "2020", "day03" };
+            args = new[] { "2020", "day04" };
 
-            if (!args.Any())
+            if (args.Length == 0)
             {
                 Runner.RunAll();
             }

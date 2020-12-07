@@ -7,12 +7,11 @@ namespace advent.Extensions
 {
     public static class StringExtensions
     {
-        public static IEnumerable<string> Lines(this string str)
+        public static IEnumerable<string> Lines(this string str, bool includeBlankLines = false)
         {
-            return str?.Split(
-                       new[] {"\r\n", "\r", "\n", Environment.NewLine},
-                       StringSplitOptions.None).Where(x => !x.IsNullOrWhitespace())
-                   ?? Enumerable.Empty<string>();
+            return str?.Split(new[] { "\r\n", "\r", "\n", Environment.NewLine }, StringSplitOptions.None)
+                .Where(x => includeBlankLines || !x.IsNullOrWhitespace())
+                ?? Enumerable.Empty<string>();
         }
 
         public static bool IsNullOrEmpty(this string str)
@@ -53,6 +52,13 @@ namespace advent.Extensions
         {
             return Enumerable.Range(0, str.Length / length)
                 .Select(i => str.Substring(i * length, length));
+        }
+
+        public static IEnumerable<string> SplitAt(this string str, int pos)
+        {
+            yield return str[0..pos];
+
+            yield return str[pos..];
         }
     }
 }

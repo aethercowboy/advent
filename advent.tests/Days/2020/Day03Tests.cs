@@ -60,7 +60,7 @@ namespace advent.tests.Days._2020
         [Fact]
         public void Test04()
         {
-            long result = 82 * 173 * 84 * 80 * 46;
+            const long result = 82L * 173L * 84L * 80L * 46L;
 
             Assert.Equal(4385176320, result);
         }
