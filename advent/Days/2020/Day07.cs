@@ -1,10 +1,33 @@
-﻿using System;
+﻿using advent.Extensions;
+using advent.Models._2020;
+using System.Linq;
 
 namespace advent.Days._2020
 {
     public class Day07 : Day
     {
-        public override int Part1(string input) => throw new NotImplementedException();
-        public override long Part2(string input) => throw new NotImplementedException();
+        public override int Part1(string input)
+        {
+            var bags = new BagHandler();
+
+            foreach (var line in input.Lines())
+            {
+                bags.AddBag(line);
+            }
+
+            return bags.BagContains("shiny gold").Count;
+        }
+
+        public override long Part2(string input)
+        {
+            var bags = new BagHandler();
+
+            foreach (var line in input.Lines())
+            {
+                bags.AddBag(line);
+            }
+
+            return bags.BagInsides("shiny gold").Sum(x => x.Value);
+        }
     }
 }
