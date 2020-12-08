@@ -6,7 +6,7 @@ namespace advent
     {
         private static void Main(string[] args)
         {
-            args = new[] { "2020", "day07" };
+            args = new[] { "2020", "day08" };
 
             if (args.Length == 0)
             {
