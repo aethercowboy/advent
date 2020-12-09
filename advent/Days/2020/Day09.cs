@@ -29,9 +29,9 @@ namespace advent.Days._2020
             return 0;
         }
 
-        private bool IsValid(int number, List<int> range)
+        private static bool IsValid(int number, List<int> range)
         {
-            return range.SelectMany(x => range, (x, y) => new { x, y })
+            return range.SelectMany(_ => range, (x, y) => new { x, y })
                 .Where(x => x.x != x.y)
                 .Select(x => x.x + x.y)
                 .Any(x => x == number);

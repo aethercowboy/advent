@@ -2,9 +2,11 @@
 
 namespace advent
 {
-    internal class Program
+    internal static class Program
     {
+#pragma warning disable IDE0060 // Remove unused parameter
         private static void Main(string[] args)
+#pragma warning restore IDE0060 // Remove unused parameter
         {
             args = new[] { "2020", "day09" };
 

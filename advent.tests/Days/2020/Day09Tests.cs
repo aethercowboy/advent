@@ -11,9 +11,10 @@ namespace advent.tests.Days._2020
 
         public Day09Tests()
         {
-            day = new Day09();
-
-            day.PreambleLength = 5;
+            day = new Day09
+            {
+                PreambleLength = 5
+            };
 
             data = DayData.LoadFile(2020, "Day09");
         }
