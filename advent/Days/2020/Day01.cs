@@ -16,7 +16,7 @@ namespace advent.Days._2020
             {
                 var a = data[i];
 
-                for (var j = 0; j < data.Count; ++j)
+                for (var j = i + 1; j < data.Count; ++j)
                 {
                     if (i == j) continue;
 
@@ -43,13 +43,13 @@ namespace advent.Days._2020
             {
                 var a = data[i];
 
-                for (var j = 0; j < data.Count; ++j)
+                for (var j = i + 1; j < data.Count; ++j)
                 {
                     if (i == j) continue;
 
                     var b = data[j];
 
-                    for (var k = 0; k < data.Count; ++k)
+                    for (var k = j + 1; k < data.Count; ++k)
                     {
                         if (i == k || j == k) continue;
 
