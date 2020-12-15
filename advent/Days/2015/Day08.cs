@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-using advent.Extensions;
 
 namespace advent.Days._2015
 {
@@ -13,7 +13,7 @@ namespace advent.Days._2015
 
         private static int CalculateMemoryLength(string input)
         {
-            var str = input.Substring(1, input.Length - 2);
+            var str = input[1..^1];
 
             var output = str.Length;
 
@@ -34,16 +34,11 @@ namespace advent.Days._2015
 
             foreach (var c in input)
             {
-                switch (c)
+                output += c switch
                 {
-                    case '"':
-                    case '\\':
-                        output += 2;
-                        break;
-                    default:
-                        output += 1;
-                        break;
-                }
+                    '"' or '\\' => 2,
+                    _ => 1,
+                };
             }
             return output;
         }

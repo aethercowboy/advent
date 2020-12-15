@@ -12,10 +12,7 @@ namespace advent.Days._2015
         {
             var bytes = Encoding.ASCII.GetBytes(input);
             var hash = _md5.ComputeHash(bytes);
-            var hashStr = string.Join("", hash.Select(x => x.ToString("X2")));
-
-
-            return hashStr;
+            return string.Concat(hash.Select(x => x.ToString("X2")));
         }
 
         private int Part0(string input, int zeroes)

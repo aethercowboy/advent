@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using advent.Extensions;
+using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2015
 {
@@ -68,8 +68,7 @@ namespace advent.Days._2015
             var people = dict.Select(x => x.Key).ToList();
             var routes = people.GenerateRoutes();
 
-            return routes.Select(route => CalculateHappiness(dict, route))
-                .Max();
+            return routes.Max(route => CalculateHappiness(dict, route));
         }
 
         public override long Part1(string input)

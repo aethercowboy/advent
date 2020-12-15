@@ -29,8 +29,8 @@ namespace advent.tests.Extensions
         {
             var result = "This is a line".Lines().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
-            Assert.Equal(1, result.Count);
+            Assert.True(result.Count > 0);
+            Assert.Single(result);
         }
 
         [Fact]
@@ -39,7 +39,7 @@ namespace advent.tests.Extensions
             var result = @"This is a line
 as is this".Lines().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(2, result.Count);
         }
 
@@ -48,7 +48,7 @@ as is this".Lines().ToList();
         {
             var result = "This is a line\nas is this".Lines().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(2, result.Count);
         }
 
@@ -57,10 +57,10 @@ as is this".Lines().ToList();
         {
             var rnd = new Random();
             var i = Math.Abs(rnd.Next(1000));
-            var str = string.Join("\n", Enumerable.Range(0, i).Select(x => "this is a line"));
+            var str = string.Join("\n", Enumerable.Range(0, i).Select(_ => "this is a line"));
             var result = str.Lines().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(i, result.Count);
         }
 
@@ -69,9 +69,9 @@ as is this".Lines().ToList();
         {
             var result = "This is a line\r\nas is this".Lines().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(2, result.Count);
-            Assert.Equal(result.First().Length, 14);
+            Assert.Equal(14, result[0].Length);
         }
 
         [Fact]
@@ -79,7 +79,7 @@ as is this".Lines().ToList();
         {
             var result = "This is a line\ras is this".Lines().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(2, result.Count);
         }
 
@@ -160,8 +160,8 @@ as is this".Lines().ToList();
         {
             var result = "one".Words().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
-            Assert.Equal(1, result.Count);
+            Assert.True(result.Count > 0);
+            Assert.Single(result);
         }
 
         [Fact]
@@ -169,7 +169,7 @@ as is this".Lines().ToList();
         {
             var result = "two words".Words().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(2, result.Count);
         }
 
@@ -178,7 +178,7 @@ as is this".Lines().ToList();
         {
             var result = "lots                of                  spaaaaaaaaaaaaaaace".Words().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(3, result.Count);
         }
 
@@ -240,8 +240,8 @@ as is this".Lines().ToList();
         {
             var result = new[] { "1" }.ToInts().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
-            Assert.Equal(1, result.Count);
+            Assert.True(result.Count > 0);
+            Assert.Single(result);
             Assert.Equal(1, result.Sum());
         }
 
@@ -250,7 +250,7 @@ as is this".Lines().ToList();
         {
             var result = new[] { "1", "2", "3", "4" }.ToInts().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(4, result.Count);
             Assert.Equal(10, result.Sum());
         }
@@ -260,7 +260,7 @@ as is this".Lines().ToList();
         {
             var result = new[] { "1", "2", "z", "4" }.ToInts().ToList();
             Assert.NotNull(result);
-            Assert.True(result.Any());
+            Assert.True(result.Count > 0);
             Assert.Equal(4, result.Count);
             Assert.Equal(7, result.Sum());
         }

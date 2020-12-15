@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using advent.Collections;
+﻿using advent.Collections;
 using advent.Extensions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace advent.Days._2017
 {
@@ -22,7 +22,7 @@ namespace advent.Days._2017
                 foreach (var i in lengthsList)
                 {
                     var range = Enumerable.Range(current, i).ToList();
-                    var slice = range.Select(j => r[j]).ToList();
+                    var slice = range.ConvertAll(j => r[j]);
                     slice.Reverse();
 
                     var sidx = 0;

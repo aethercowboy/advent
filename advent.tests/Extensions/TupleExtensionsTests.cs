@@ -6,7 +6,7 @@ namespace advent.tests.Extensions
 {
     public class TupleExtensionsTests
     {
-        private Tuple<int, int> _tuple;
+        private readonly Tuple<int, int> _tuple;
         public TupleExtensionsTests()
         {
             _tuple = new Tuple<int, int>(0, 0);

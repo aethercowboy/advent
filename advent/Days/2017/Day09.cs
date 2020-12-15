@@ -12,7 +12,6 @@ namespace advent.Days._2017
             public IList<Group> Children { get; } = new List<Group>();
 
             public int Score => (Parent?.Score).GetValueOrDefault() + 1;
-
         }
 
         private static int Part0(string input, Func<int, int, int> responseFunc)
@@ -33,6 +32,7 @@ namespace advent.Days._2017
                         isEscape = false;
                     }
                     else
+                    {
                         switch (c)
                         {
                             case '!':
@@ -45,8 +45,10 @@ namespace advent.Days._2017
                                 ++garbage;
                                 break;
                         }
+                    }
                 }
                 else
+                {
                     switch (c)
                     {
                         case '<':
@@ -66,6 +68,7 @@ namespace advent.Days._2017
                             current = stack.Pop();
                             break;
                     }
+                }
             }
 
             return responseFunc(groups.Sum(x => x.Score), garbage);
@@ -73,12 +76,12 @@ namespace advent.Days._2017
 
         public override long Part1(string input)
         {
-            return Part0(input, (x, y) => x);
+            return Part0(input, (x, _) => x);
         }
 
         public override long Part2(string input)
         {
-            return Part0(input, (x, y) => y);
+            return Part0(input, (_, y) => y);
         }
     }
 }

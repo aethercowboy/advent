@@ -36,26 +36,6 @@ namespace advent.Models._2020
 
                 return 0;
             }
-
-            //Console.WriteLine($"Turn {turn} : {digit}");
-
-            //var returnVal = 0;
-            //if (_dictionary.ContainsKey(digit))
-            //{
-            //    var oldTurn = _dictionary[digit];
-
-            //    returnVal = turn - oldTurn;
-
-            //    _dictionary[digit] = turn;
-            //}
-            //else
-            //{
-            //    _dictionary.Add(digit, turn);
-            //}
-
-            //LastNumber = digit;
-
-            //return returnVal;
         }
     }
 }

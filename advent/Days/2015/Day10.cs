@@ -4,7 +4,7 @@ namespace advent.Days._2015
 {
     public class Day10 : Day
     {
-        public int Generations = 40;
+        public int Generations { get; internal set; } = 40;
 
         private static string LookAndSay(string input)
         {
@@ -24,13 +24,13 @@ namespace advent.Days._2015
                 return (skip + 1).ToString() + c;
             });
 
-            return string.Join(string.Empty, str);
+            return string.Concat(str);
         }
 
         public override long Part1(string input)
         {
             var response = Enumerable.Range(0, Generations)
-                .Aggregate(input, (current, i) => LookAndSay(current));
+                .Aggregate(input, (current, _) => LookAndSay(current));
 
             return response.Length;
         }

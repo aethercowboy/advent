@@ -97,9 +97,7 @@ namespace advent.Models._2020
 
         private void Rotate(int steps)
         {
-            var normalized = ((steps % 4) + 4) % 4;
-
-            switch (normalized)
+            switch (((steps % 4) + 4) % 4)
             {
                 case 0:
                     // do nothing

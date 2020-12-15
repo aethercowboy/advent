@@ -23,7 +23,7 @@ namespace advent.Extensions
 
         public static string ToHex(this IEnumerable<int> list)
         {
-            return string.Join(string.Empty, list.Select(ToHex));
+            return string.Concat(list.Select(ToHex));
         }
     }
 }

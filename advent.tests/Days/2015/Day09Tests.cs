@@ -5,7 +5,7 @@ namespace advent.tests.Days._2015
 {
     public class Day09Tests : DayTests<Day09>
     {
-        private string input = @"London to Dublin = 464
+        private readonly string input = @"London to Dublin = 464
 London to Belfast = 518
 Dublin to Belfast = 141";
 

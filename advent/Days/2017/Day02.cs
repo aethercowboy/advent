@@ -13,7 +13,7 @@ namespace advent.Days._2017
         }
 
         /// <summary>
-        /// For each row, determine the difference between the largest value and the smallest value; 
+        /// For each row, determine the difference between the largest value and the smallest value;
         /// the checksum is the sum of all of these differences.
         /// </summary>
         /// <param name="input"></param>
@@ -30,8 +30,8 @@ namespace advent.Days._2017
         }
 
         /// <summary>
-        /// It sounds like the goal is to find the only two numbers in each row where one evenly divides the other - 
-        /// that is, where the result of the division operation is a whole number. They would like you to find those 
+        /// It sounds like the goal is to find the only two numbers in each row where one evenly divides the other -
+        /// that is, where the result of the division operation is a whole number. They would like you to find those
         /// numbers on each line, divide them, and add up each line's result.
         /// </summary>
         /// <param name="input"></param>
@@ -40,9 +40,8 @@ namespace advent.Days._2017
         {
             return ProcessLine(input, numbers =>
             {
-                return numbers.SelectMany(x => numbers, (x, y) => new { x, y })
-                    .Where(t => t.x != t.y)
-                    .Where(t => t.x % t.y == 0)
+                return numbers.SelectMany(_ => numbers, (x, y) => new { x, y })
+                    .Where(t => t.x != t.y && t.x % t.y == 0)
                     .Select(t => t.x / t.y)
                     .FirstOrDefault();
             });

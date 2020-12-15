@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace advent.Days._2020
 {
-    delegate int Process(IList<string> buffer);
+    internal delegate int Process(IList<string> buffer);
 
     public class Day04 : Day
     {
@@ -47,7 +47,7 @@ namespace advent.Days._2020
             return PartX(input, ProcessBuffer2);
         }
 
-        private int PartX(string input, Process process)
+        private static int PartX(string input, Process process)
         {
             var lines = input.Lines(includeBlankLines: true)
                 .ToList();

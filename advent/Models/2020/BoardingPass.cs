@@ -6,8 +6,8 @@
         public int Column { get; }
         public int SeatId { get; }
 
-        private int rowCount = 128;
-        private int colCount = 8;
+        private readonly int rowCount = 128;
+        private readonly int colCount = 8;
 
         public BoardingPass(string input)
         {
@@ -38,7 +38,7 @@
 
             Row = maxRow;
             Column = maxCol;
-            SeatId = Row * 8 + Column;
+            SeatId = (Row * 8) + Column;
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -10,10 +10,9 @@ namespace advent.Days._2017
     {
         public override long Part1(string input)
         {
-            var duet = new Duet();
             var lines = input.Lines().ToList();
 
-            return duet.Part1(lines);
+            return Duet.Part1(lines);
         }
 
         public override long Part2(string input)
@@ -41,8 +40,8 @@ namespace advent.Days._2017
                     break;
                 }
 
-                var line0 = lines[(int) i];
-                var line1 = lines[(int) j];
+                var line0 = lines[(int)i];
+                var line1 = lines[(int)j];
 
                 var r0 = duet0.ProcessLine(line0);
                 var r1 = duet1.ProcessLine(line1);
@@ -58,9 +57,9 @@ namespace advent.Days._2017
         {
             private readonly IDictionary<string, BigInteger> _dict = new Dictionary<string, BigInteger>();
 
-            public Queue<BigInteger> Sounds = new Queue<BigInteger>();
+            public static Queue<BigInteger> Sounds => new Queue<BigInteger>();
             public int Sends { get; set; }
-            public IDictionary<string, Func<string[], BigInteger?>> Execute = new Dictionary<string, Func<string[], BigInteger?>>();
+            public static IDictionary<string, Func<string[], BigInteger?>> Execute => new Dictionary<string, Func<string[], BigInteger?>>();
             public bool IsWaiting { get; set; }
             public Duet Partner { get; set; }
 
@@ -93,14 +92,14 @@ namespace advent.Days._2017
                 switch (instruction)
                 {
                     case "rcv":
-                    {
-                        var z = RcvQ(cdr);
-                        if (z == null)
                         {
-                            i -= 1;
+                            var z = RcvQ(cdr);
+                            if (z == null)
+                            {
+                                i -= 1;
+                            }
+                            break;
                         }
-                        break;
-                    }
                     default:
                         var response = Execute[instruction](cdr);
                         if (instruction == "jgz" && response.HasValue)
@@ -117,7 +116,7 @@ namespace advent.Days._2017
             {
                 lock (_lock)
                 {
-                    if (Sounds.Any())
+                    if (Sounds.Count > 0)
                     {
                         return Sounds.Dequeue();
                     }
@@ -163,8 +162,7 @@ namespace advent.Days._2017
                 var y = args[1];
 
                 InitVal(x);
-                var z = GetVal(y);
-                _dict[x] = z;
+                _dict[x] = GetVal(y);
                 return GetVal(x);
             }
 
@@ -241,14 +239,14 @@ namespace advent.Days._2017
 
                 InitVal(x);
                 var z = GetVal(y);
-                return GetVal(x) > 0 ? z : (BigInteger?) null;
+                return GetVal(x) > 0 ? z : (BigInteger?)null;
             }
 
-            public long Part1(IList<string> lines)
+            public static long Part1(IList<string> lines)
             {
                 for (BigInteger i = 0; i < lines.Count; ++i)
                 {
-                    var line = lines[(int) i];
+                    var line = lines[(int)i];
                     var words = line.Words().ToList();
                     var instruction = words[0];
                     var cdr = words.Skip(1).ToArray();
@@ -260,7 +258,7 @@ namespace advent.Days._2017
                     switch (instruction)
                     {
                         case "rcv":
-                            return (int) response.Value;
+                            return (int)response.Value;
                         case "jgz":
                             i += response.Value - 1;
                             break;

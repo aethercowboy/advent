@@ -29,7 +29,7 @@ namespace advent.tests.Days._2015
         [Fact]
         public void Test03()
         {
-            var result = Client.IsEightCharacters("abcdefgh");
+            var result = Day11.IsEightCharacters("abcdefgh");
             Assert.True(result);
         }
 
@@ -38,10 +38,10 @@ namespace advent.tests.Days._2015
         {
             const string input = "hijklmmn";
 
-            var result = Client.HasOneIncreasingStraight(input);
+            var result = Day11.HasOneIncreasingStraight(input);
             Assert.True(result);
 
-            result = Client.DoesNotHaveILO(input);
+            result = Day11.DoesNotHaveILO(input);
             Assert.False(result);
         }
 
@@ -50,10 +50,10 @@ namespace advent.tests.Days._2015
         {
             const string input = "abbceffg";
 
-            var result = Client.HasTwoNonOverlappingPairsOfLetters(input);
+            var result = Day11.HasTwoNonOverlappingPairsOfLetters(input);
             Assert.True(result);
 
-            result = Client.HasOneIncreasingStraight(input);
+            result = Day11.HasOneIncreasingStraight(input);
             Assert.False(result);
         }
 
@@ -62,7 +62,7 @@ namespace advent.tests.Days._2015
         {
             const string input = "abbcegjk";
 
-            var result = Client.HasTwoNonOverlappingPairsOfLetters(input);
+            var result = Day11.HasTwoNonOverlappingPairsOfLetters(input);
             Assert.False(result);
         }
     }

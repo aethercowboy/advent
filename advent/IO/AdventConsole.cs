@@ -8,12 +8,12 @@ namespace advent.IO
         {
             Console.WriteLine(input);
 
-            Wrote?.Invoke(this, new ConsoleEventArgs {Message = input});
+            Wrote?.Invoke(this, new ConsoleEventArgs { Message = input });
 
             return input;
         }
 
-        public void WriteLine(string input = null)
+        public void WriteLine(string input)
         {
             if (input == null)
             {

@@ -5,7 +5,7 @@ namespace advent.tests.Days._2017
 {
     public class Day16Tests : DayTests<Day16>
     {
-        public string input = @"s1,x3/4,pe/b";
+        public string input = "s1,x3/4,pe/b";
 
         public Day16Tests()
         {

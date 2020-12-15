@@ -5,7 +5,7 @@ namespace advent.tests.Days._2015
 {
     public class Day13Tests : DayTests<Day13>
     {
-        private string input = @"Alice would gain 54 happiness units by sitting next to Bob.
+        private readonly string input = @"Alice would gain 54 happiness units by sitting next to Bob.
 Alice would lose 79 happiness units by sitting next to Carol.
 Alice would lose 2 happiness units by sitting next to David.
 Bob would gain 83 happiness units by sitting next to Alice.

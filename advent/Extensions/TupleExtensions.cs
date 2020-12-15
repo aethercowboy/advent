@@ -23,16 +23,16 @@ namespace advent.Extensions
             switch (direction)
             {
                 case Direction.Down:
-                    y -= 1;
+                    y--;
                     break;
                 case Direction.Up:
-                    y += 1;
+                    y++;
                     break;
                 case Direction.Left:
-                    x -= 1;
+                    x--;
                     break;
                 case Direction.Right:
-                    x += 1;
+                    x++;
                     break;
             }
 

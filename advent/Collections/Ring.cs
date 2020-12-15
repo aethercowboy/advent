@@ -8,7 +8,6 @@ namespace advent.Collections
     {
         public Ring() : this(new List<T>())
         {
-            
         }
 
         public Ring(IList<T> list)
@@ -18,9 +17,7 @@ namespace advent.Collections
 
         public Ring(IEnumerable<T> collection) : this(collection.ToList())
         {
-            
         }
-
 
         protected readonly IList<T> _list;
 
@@ -75,7 +72,7 @@ namespace advent.Collections
 
         public int InsertAfter(int index, T item)
         {
-            var idx = index % Count + 1;
+            var idx = (index % Count) + 1;
             if (idx >= Count)
             {
                 Add(item);

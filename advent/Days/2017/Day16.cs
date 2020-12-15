@@ -1,43 +1,42 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using advent.Collections;
+﻿using advent.Collections;
 using advent.Extensions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace advent.Days._2017
 {
     public class Day16 : Day
     {
-        public string Dancers = Globals.Alphabet.Substring(0, 16);
+        public string Dancers { get; set; } = Globals.Alphabet.Substring(0, 16);
 
         private static void Dance(DancerList dancers, IList<string> moves)
         {
             foreach (var move in moves)
             {
-                var action = move[0];
-                switch (action)
+                switch (move[0])
                 {
                     case 's':
-                    {
-                        var x = move.Substring(1).ToInt();
-                        dancers.Spin(x);
-                        break;
-                    }
+                        {
+                            var x = move[1..].ToInt();
+                            dancers.Spin(x);
+                            break;
+                        }
                     case 'x':
-                    {
-                        var ab = move.Substring(1).Split('/');
-                        var a = ab[0].ToInt();
-                        var b = ab[1].ToInt();
-                        dancers.Exchange(a, b);
-                        break;
-                    }
+                        {
+                            var ab = move[1..].Split('/');
+                            var a = ab[0].ToInt();
+                            var b = ab[1].ToInt();
+                            dancers.Exchange(a, b);
+                            break;
+                        }
                     case 'p':
-                    {
-                        var ab = move.Substring(1).Split('/');
-                        var a = ab[0];
-                        var b = ab[1];
-                        dancers.Partner(a, b);
-                        break;
-                    }
+                        {
+                            var ab = move[1..].Split('/');
+                            var a = ab[0];
+                            var b = ab[1];
+                            dancers.Partner(a, b);
+                            break;
+                        }
                 }
             }
         }
@@ -85,8 +84,6 @@ namespace advent.Days._2017
 
             return 0;
         }
-
-
     }
 
     public class DancerList : Ring<char>
@@ -113,10 +110,6 @@ namespace advent.Days._2017
         public void Spin(int x)
         {
             Offset = (Offset + Count - x) % Count;
-
-            //var range = this.Skip(offset).ToList();
-            //RemoveRange(offset, x);
-            //InsertRange(0, range);
         }
 
         public void Exchange(int a, int b)

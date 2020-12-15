@@ -16,7 +16,7 @@ namespace advent.Days._2020
             return PartX(input, 30000000);
         }
 
-        private long PartX(string input, int iterations)
+        private static long PartX(string input, int iterations)
         {
             var digits = input.Split(',').ToInts()
                 .ToList();

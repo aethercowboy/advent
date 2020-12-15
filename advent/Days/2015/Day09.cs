@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2015
 {
@@ -21,7 +21,6 @@ namespace advent.Days._2015
 
             return dict[key];
         }
-
 
         private static int CalculateRoute(IDictionary<Tuple<string, string>, int> dict, IList<string> route)
         {
@@ -47,11 +46,11 @@ namespace advent.Days._2015
             foreach (var line in input.Lines())
             {
                 var words = line.Words().ToList();
-                var fromTo = new List<string> {words[0], words[2]};
+                var fromTo = new List<string> { words[0], words[2] };
                 fromTo.Sort();
                 var dist = words.Last().ToInt();
 
-                var key = new Tuple<string, string>(fromTo.First(), fromTo.Last());
+                var key = new Tuple<string, string>(fromTo[0], fromTo.Last());
                 dict.Add(key, dist);
                 locs.TryAdd(fromTo[0]);
                 locs.TryAdd(fromTo[1]);

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -16,7 +16,7 @@ namespace advent.Days._2017
                 {"B", new []{48271, 8}}
             };
 
-            var generators = input.Lines()
+            return input.Lines()
                 .Select(line => line.Words().ToList())
                 .Select(words => new
                 {
@@ -26,8 +26,6 @@ namespace advent.Days._2017
                 })
                 .Select(t => new Generator(t.key, t.val, t.fac[0], t.fac[1]))
                 .ToList();
-
-            return generators;
         }
         public override long Part1(string input)
         {
@@ -60,10 +58,10 @@ namespace advent.Days._2017
             return Enumerable
                 .Range(0, Rounds)
                 .Select(_ => generators.Select(nextFunc)
-                    .Select(v => Convert.ToString(v, 2).PadLeft(32, '0').Substring(16)).ToList())
+                    .Select(v => Convert.ToString(v, 2).PadLeft(32, '0')[16..]).ToList())
                 .Count(values =>
                 {
-                    var first = values.First();
+                    var first = values[0];
                     return values.Skip(1).All(x => x == first);
                 });
         }

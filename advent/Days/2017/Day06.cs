@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -16,11 +16,11 @@ namespace advent.Days._2017
             for (var i = 0; i < max; ++i)
             {
                 var jdx = (idx + i + 1) % values.Count;
-                values[jdx] += 1;
+                values[jdx]++;
             }
         }
 
-        public int Part0(string input, Func<int,int,int> resultFunc)
+        public static int Part0(string input, Func<int, int, int> resultFunc)
         {
             var set = new Dictionary<string, int>();
 
@@ -41,12 +41,12 @@ namespace advent.Days._2017
 
         public override long Part1(string input)
         {
-            return Part0(input, (x, y) => x);
+            return Part0(input, (x, _) => x);
         }
 
         public override long Part2(string input)
         {
-            return Part0(input, (x, y) => y);
+            return Part0(input, (_, y) => y);
         }
     }
 }

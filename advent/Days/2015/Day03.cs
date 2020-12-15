@@ -7,19 +7,14 @@ namespace advent.Days._2015
     {
         private static Tuple<int, int> Navigate(char c, Tuple<int, int> loc)
         {
-            switch (c)
+            return c switch
             {
-                case '>':
-                    return new Tuple<int, int>(loc.Item1 + 1, loc.Item2);
-                case '<':
-                    return new Tuple<int, int>(loc.Item1 - 1, loc.Item2);
-                case '^':
-                    return new Tuple<int, int>(loc.Item1, loc.Item2 + 1);
-                case 'v':
-                    return new Tuple<int, int>(loc.Item1, loc.Item2 - 1);
-                default:
-                    return loc;
-            }
+                '>' => new Tuple<int, int>(loc.Item1 + 1, loc.Item2),
+                '<' => new Tuple<int, int>(loc.Item1 - 1, loc.Item2),
+                '^' => new Tuple<int, int>(loc.Item1, loc.Item2 + 1),
+                'v' => new Tuple<int, int>(loc.Item1, loc.Item2 - 1),
+                _ => loc,
+            };
         }
 
         private static void AddPresent(IDictionary<Tuple<int, int>, int> dict, Tuple<int, int> loc)

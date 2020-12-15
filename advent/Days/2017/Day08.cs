@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -20,26 +20,19 @@ namespace advent.Days._2017
 
             var val = dict[key];
 
-            switch (operation)
+            return operation switch
             {
-                case ">":
-                    return val > comp;
-                case "<":
-                    return val < comp;
-                case ">=":
-                    return val >= comp;
-                case "<=":
-                    return val <= comp;
-                case "==":
-                    return val == comp;
-                case "!=":
-                    return val != comp;
-                default:
-                    return false;
-            }
+                ">" => val > comp,
+                "<" => val < comp,
+                ">=" => val >= comp,
+                "<=" => val <= comp,
+                "==" => val == comp,
+                "!=" => val != comp,
+                _ => false,
+            };
         }
 
-        private int Part0(string input, Func<int, int, int> resultFunc)
+        private static int Part0(string input, Func<int, int, int> resultFunc)
         {
             var dict = new Dictionary<string, int>();
 
@@ -79,12 +72,12 @@ namespace advent.Days._2017
 
         public override long Part1(string input)
         {
-            return Part0(input, (x, y) => x);
+            return Part0(input, (x, _) => x);
         }
 
         public override long Part2(string input)
         {
-            return Part0(input, (x, y) => y);
+            return Part0(input, (_, y) => y);
         }
     }
 }

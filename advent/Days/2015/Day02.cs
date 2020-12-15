@@ -56,8 +56,8 @@ namespace advent.Days._2015
             {
                 var units = GetUnits(l, w, h, (x, y) => x + y);
 
-                return units.Min() * 2
-                       + l * w * h;
+                return (units.Min() * 2)
+                       + (l * w * h);
             });
         }
     }

@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using advent.Extensions;
+using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
     public class Day13 : Day
     {
-
         private static Firewall Part0(string input)
         {
             var firewall = new Firewall();
@@ -51,13 +50,8 @@ namespace advent.Days._2017
         {
             var firewall = Part0(input);
 
-            var delay = Enumerable.Range(0, int.MaxValue)
-                .FirstOrDefault(x =>
-                {
-                    return firewall.Layers.All(y => y.TimeTravel(x) != 0);
-                });
-
-            return delay;
+            return Enumerable.Range(0, int.MaxValue)
+                .FirstOrDefault(x => firewall.Layers.All(y => y.TimeTravel(x) != 0));
         }
     }
 
@@ -152,8 +146,8 @@ namespace advent.Days._2017
         {
             Layer = layer;
         }
-        
-        private Layer Layer { get; set; }
+
+        private Layer Layer { get; }
         private int direction = 1;
         public int Index { get; protected set; } = 0;
 

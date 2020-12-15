@@ -1,7 +1,5 @@
-﻿using System;
+﻿using advent.Extensions;
 using System.Collections.Generic;
-using System.Text;
-using advent.Extensions;
 
 namespace advent.Models._2015
 {

@@ -19,9 +19,7 @@ namespace advent.Days._2015
         {
             var json = JToken.Parse($"[{input}]");
 
-            var response = CalculateSum(json);
-
-            return response;
+            return CalculateSum(json);
         }
 
         private int CalculateSum(JToken json)

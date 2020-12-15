@@ -118,7 +118,7 @@ namespace Data {
 
 <# foreach (var day in range) { #>
 <# var num = day.ToString("D2"); #>
-			public static string Day<#= num #> = DayData.LoadFile(<#= y #>, nameof(Day<#= num #>));
+			public readonly static string Day<#= num #> = DayData.LoadFile(<#= y #>, nameof(Day<#= num #>));
 <# } #>
 		}
 <# } #>

@@ -4,7 +4,7 @@ namespace advent.Days._2017
 {
     public class Day11 : Day
     {
-        public AdventHex Part0(string input)
+        public static AdventHex Part0(string input)
         {
             var hex = new AdventHex();
 
@@ -60,46 +60,46 @@ namespace advent.Days._2017
 
         public void MoveNorth()
         {
-            X += 1;
+            X++;
             MaxDistance = Math.Max(MaxDistance, DistanceToStart());
         }
 
         public void MoveNorthEast()
         {
-            X += 1;
-            Y += 1;
+            X++;
+            Y++;
             MaxDistance = Math.Max(MaxDistance, DistanceToStart());
         }
 
         public void MoveSouthEast()
         {
-            Y += 1;
+            Y++;
             MaxDistance = Math.Max(MaxDistance, DistanceToStart());
         }
 
         public void MoveSouth()
         {
-            X -= 1;
+            X--;
             MaxDistance = Math.Max(MaxDistance, DistanceToStart());
         }
 
         public void MoveSouthWest()
         {
-            Y -= 1;
-            X -= 1;
+            Y--;
+            X--;
             MaxDistance = Math.Max(MaxDistance, DistanceToStart());
         }
 
         public void MoveNorthWest()
         {
-            Y -= 1;
+            Y--;
             MaxDistance = Math.Max(MaxDistance, DistanceToStart());
         }
 
         public int DistanceToStart()
         {
-            if (X > 0 && Y < 0
-                || X < 0 && Y > 0)
+            if ((X > 0 && Y < 0)
+                || (X < 0 && Y > 0))
             {
                 return Math.Abs(X) + Math.Abs(Y);
             }

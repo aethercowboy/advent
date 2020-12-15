@@ -11,7 +11,7 @@ namespace advent.Days._2020
             return PartX(input, ProcessBatch);
         }
 
-        private int PartX(string input, Process process)
+        private static int PartX(string input, Process process)
         {
             var lines = input.Lines(includeBlankLines: true);
 

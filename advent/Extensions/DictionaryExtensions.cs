@@ -8,7 +8,7 @@ namespace advent.Extensions
         {
             return dict.ContainsKey(key)
                 ? dict[key]
-                : default(TVal);
+                : default;
         }
     }
 }

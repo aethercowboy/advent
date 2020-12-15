@@ -15,10 +15,8 @@ namespace advent.Days._2015
 
         public override long Part1(string input)
         {
-            var output = input.Select(_toInt)
+            return input.Select(_toInt)
                 .Sum();
-
-            return output;
         }
 
         public override long Part2(string input)

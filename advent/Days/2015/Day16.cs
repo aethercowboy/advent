@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using advent.Extensions;
+﻿using advent.Extensions;
 using advent.Models._2015;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace advent.Days._2015
 {
     public class Day16 : Day
     {
-        public string Pattern = @"
+        public static string Pattern => @"
 children: 3
 cats: 7
 samoyeds: 2

@@ -19,7 +19,6 @@ namespace advent.Days._2015
             public int Cooldown { get; set; }
             public int Ticks { get; set; }
             public int Score { get; set; }
-
         }
 
         private static IList<Deer> PopulateRates(string input)

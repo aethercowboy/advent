@@ -7,7 +7,7 @@ namespace advent.tests.Days
     public abstract class DayTests<TDay>
         where TDay : Day, new()
     {
-        protected TDay Client;
+        protected readonly TDay Client;
         protected string Output = string.Empty;
 
         protected DayTests()

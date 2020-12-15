@@ -8,7 +8,6 @@ namespace advent.Days._2015
     {
         private List<List<int>> _lightsList;
 
-
         private void ChangeLight(Tuple<int, int> key, int value)
         {
             _lightsList[key.Item1][key.Item2] = value;
@@ -36,10 +35,7 @@ namespace advent.Days._2015
 
         private Action<Tuple<int, int>> IncreaseLight(int increment)
         {
-            return key =>
-            {
-                ChangeLight(key, Math.Max(GetValue(key) + increment, 0));
-            };
+            return key => ChangeLight(key, Math.Max(GetValue(key) + increment, 0));
         }
 
         private static void ActOnLight(string start, string end, Action<Tuple<int, int>> func)
@@ -65,7 +61,6 @@ namespace advent.Days._2015
         private void TurnOn(string start, string end)
         {
             ActOnLight(start, end, TurnOnLight);
-
         }
 
         private void TurnOff(string start, string end)
@@ -82,6 +77,10 @@ namespace advent.Days._2015
         {
             Increase(start, end, 1);
         }
+        private void Increase(string start, string end, int increment)
+        {
+            ActOnLight(start, end, IncreaseLight(increment));
+        }
 
         private void Decrease(string start, string end)
         {
@@ -93,12 +92,7 @@ namespace advent.Days._2015
             Increase(start, end, 2);
         }
 
-        private void Increase(string start, string end, int increment)
-        {
-            ActOnLight(start, end, IncreaseLight(increment));
-        }
-
-        private static void ProcessLine0(string input, Action<string, string> turnOnFunc, Action<string, string>turnOffFunc, Action<string, string>toggleFunc)
+        private static void ProcessLine0(string input, Action<string, string> turnOnFunc, Action<string, string> turnOffFunc, Action<string, string> toggleFunc)
         {
             var parts = input.Split(" ");
 

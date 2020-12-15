@@ -43,18 +43,11 @@ namespace advent.tests.Days._2020
         [InlineData(1, 2, 2)]
         public void Test03(int x, int y, int expected)
         {
-            if (day is Day03 day3)
-            {
-                var lines = data.Lines().ToList();
-                var slope = new Tuple<int, int>(x, y);
-                var result = day3.TreesEncountered(lines, slope);
+            var lines = data.Lines().ToList();
+            var slope = new Tuple<int, int>(x, y);
+            var result = Day03.TreesEncountered(lines, slope);
 
-                Assert.Equal(expected, result);
-            }
-            else
-            {
-                Assert.True(false);
-            }
+            Assert.Equal(expected, result);
         }
 
         [Fact]

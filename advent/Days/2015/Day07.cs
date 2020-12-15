@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using advent.Extensions;
+using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2015
 {
@@ -8,7 +8,7 @@ namespace advent.Days._2015
     {
         public string Key { get; set; } = "a";
 
-        private static readonly Dictionary<string,ushort> ValueDict = new Dictionary<string, ushort>();
+        private static readonly Dictionary<string, ushort> ValueDict = new Dictionary<string, ushort>();
 
         private static ushort BitwiseAnd(ushort x, ushort y)
         {
@@ -32,7 +32,7 @@ namespace advent.Days._2015
 
         private static ushort BitwiseNot(ushort x)
         {
-            return (ushort) ~ x;
+            return (ushort)~x;
         }
 
         private static void ProcessLine(IDictionary<string, string> dict, string line)
@@ -105,7 +105,7 @@ namespace advent.Days._2015
             return val;
         }
 
-        private Dictionary<string, string> BuildDict(string input)
+        private static Dictionary<string, string> BuildDict(string input)
         {
             var dict = new Dictionary<string, string>();
 

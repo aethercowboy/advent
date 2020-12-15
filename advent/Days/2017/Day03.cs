@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -35,7 +35,7 @@ namespace advent.Days._2017
 
                 if (c == 'U' || c == 'D')
                 {
-                    size += 1;
+                    size++;
                 }
 
                 next = (next + 1) % input.Length;
@@ -45,28 +45,19 @@ namespace advent.Days._2017
 
         private static Tuple<int, int> GetNextPos(Tuple<int, int> pos, char c)
         {
-            switch (c)
+            return c switch
             {
-                case 'R':
-                    pos = pos.MoveRight();
-                    break;
-                case 'U':
-                    pos = pos.MoveUp();
-                    break;
-                case 'L':
-                    pos = pos.MoveLeft();
-                    break;
-                case 'D':
-                    pos = pos.MoveDown();
-                    break;
-            }
-
-            return pos;
+                'R' => pos.MoveRight(),
+                'U' => pos.MoveUp(),
+                'L' => pos.MoveLeft(),
+                'D' => pos.MoveDown(),
+                _ => pos,
+            };
         }
 
         private static int GetLowestGt(int num)
         {
-            IDictionary<Tuple<int,int>, int> dict = new Dictionary<Tuple<int, int>, int>();
+            IDictionary<Tuple<int, int>, int> dict = new Dictionary<Tuple<int, int>, int>();
 
             var str = BuildString(Math.Max(num, 6));
 
@@ -78,7 +69,7 @@ namespace advent.Days._2017
             {
                 pos = GetNextPos(pos, c);
 
-                var keys = new []
+                var keys = new[]
                 {
                     pos.MoveUp(),
                     pos.MoveUp().MoveRight(),
@@ -91,7 +82,7 @@ namespace advent.Days._2017
                 };
 
                 var val = dict.Where(x => keys.Contains(x.Key)).Sum(x => x.Value);
-                dict.Add(pos,val);
+                dict.Add(pos, val);
 
                 if (val > num)
                 {

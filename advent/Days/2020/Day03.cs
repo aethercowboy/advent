@@ -20,7 +20,7 @@ namespace advent.Days._2020
             return TreesEncountered(lines, slope);
         }
 
-        internal int TreesEncountered(List<string> lines, Tuple<int, int> slope)
+        internal static int TreesEncountered(List<string> lines, Tuple<int, int> slope)
         {
             var trees = 0;
 

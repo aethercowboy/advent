@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using advent.Extensions;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -20,7 +20,7 @@ namespace advent.Days._2017
 
         private static IEnumerable<Particle> RemoveCollisions(ICollection<Particle> particles)
         {
-            while (particles.Any())
+            while (particles.Count > 0)
             {
                 var first = particles.First();
                 var collisions = particles.Where(x => Equals(x.Position, first.Position)).ToList();
@@ -38,7 +38,7 @@ namespace advent.Days._2017
         {
             var particles = Part0(input);
 
-            foreach (var _ in Enumerable.Range(0,1000))
+            foreach (var _ in Enumerable.Range(0, 1000))
             {
                 foreach (var p in particles)
                 {
@@ -59,11 +59,10 @@ namespace advent.Days._2017
         public Vector3 Velocity { get; set; }
         public Vector3 Acceleration { get; set; }
 
-
         private static Vector3 Vectorize(string input, char c)
         {
             var idx = input.IndexOf(c);
-            var idy = input.Substring(idx + 3).IndexOf('>');
+            var idy = input[(idx + 3)..].IndexOf('>');
 
             var nums = input.Substring(idx + 3, idy).Split(',').Select(x => x.Trim()).ToInts().ToList();
 
@@ -79,7 +78,6 @@ namespace advent.Days._2017
         }
 
         public int Distance => Position.ManhattanDistance();
-
 
         private static Vector3 Add(Vector3 a, Vector3 b)
         {

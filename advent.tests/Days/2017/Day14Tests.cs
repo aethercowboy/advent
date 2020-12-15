@@ -5,7 +5,7 @@ namespace advent.tests.Days._2017
 {
     public class Day14Tests : DayTests<Day14>
     {
-        private string input = "flqrgnkx";
+        private readonly string input = "flqrgnkx";
 
         [Fact]
         public void Test01()

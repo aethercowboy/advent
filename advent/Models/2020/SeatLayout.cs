@@ -47,7 +47,7 @@ namespace advent.Models._2020
             }
 
             _rows = lines.Count;
-            _columns = lines.First().Length;
+            _columns = lines[0].Length;
         }
 
         private void AddSeat(int row, int column, SeatStatus status)

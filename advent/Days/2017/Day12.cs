@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using advent.Extensions;
+﻿using advent.Extensions;
 using advent.Models._2017;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace advent.Days._2017
 {
@@ -15,9 +15,7 @@ namespace advent.Days._2017
             {
                 if (seen.Contains(i)) continue;
 
-                var nextHash = GetGroupFor(paths, seen, i);
-
-                foreach (var h in nextHash)
+                foreach (var h in GetGroupFor(paths, seen, i))
                 {
                     seen.TryAdd(h);
                 }
@@ -41,7 +39,7 @@ namespace advent.Days._2017
 
                 response.Add(hash);
                 left = paths.Paths.Where(x => !seen.Contains(x)).ToList();
-            } while (left.Any());
+            } while (left.Count > 0);
 
             return response;
         }

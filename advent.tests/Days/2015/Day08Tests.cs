@@ -6,12 +6,11 @@ namespace advent.tests.Days._2015
 {
     public class Day08Tests : DayTests<Day08>
     {
-        private string input = DayData.LoadFile(2015, "Day08");
+        private readonly string input = DayData.LoadFile(2015, "Day08");
 
         [Fact]
         public void Test01()
         {
-
             var result = Client.Part1(input);
             Assert.Equal(12, result);
         }

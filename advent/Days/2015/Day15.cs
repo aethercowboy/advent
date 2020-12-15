@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2015
 {
@@ -38,7 +38,7 @@ namespace advent.Days._2015
             }
         }
 
-        public int Teaspoons = 100;
+        public static int Teaspoons => 100;
 
         private static IEnumerable<Cookie> GenerateCookies(ICollection<Ingredient> ingredients, int teaspoons)
         {
@@ -70,8 +70,7 @@ namespace advent.Days._2015
                         }
                     }
 
-                    if (!none) continue;
-
+                    if (none)
                     {
                         var cookie = new Cookie();
 
@@ -86,7 +85,7 @@ namespace advent.Days._2015
             }
         }
 
-        private IEnumerable<Cookie> Part0(string input)
+        private static IEnumerable<Cookie> Part0(string input)
         {
             var list = input.Lines()
                 .Select(line => line.Words().ToList())
@@ -110,27 +109,21 @@ namespace advent.Days._2015
                 })
                 .ToList();
 
-            var cookies = GenerateCookies(list, Teaspoons);
-
-            return cookies;
+            return GenerateCookies(list, Teaspoons);
         }
 
         public override long Part1(string input)
         {
             var cookies = Part0(input);
 
-            var maxCookie = cookies.Max(x => x.Score());
-
-            return maxCookie;
+            return cookies.Max(x => x.Score());
         }
 
         public override long Part2(string input)
         {
             var cookies = Part0(input);
 
-            var maxCookie = cookies.Where(x => x.Calories == 500).Max(x => x.Score());
-
-            return maxCookie;
+            return cookies.Where(x => x.Calories == 500).Max(x => x.Score());
         }
     }
 }

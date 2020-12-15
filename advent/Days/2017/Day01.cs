@@ -4,7 +4,7 @@ namespace advent.Days._2017
 {
     public class Day01 : Day
     {
-        public int Part0(string input, Func<int, int, int> nextIdxFunc)
+        public static int Part0(string input, Func<int, int, int> nextIdxFunc)
         {
             var output = 0;
 
@@ -26,7 +26,6 @@ namespace advent.Days._2017
             return output;
         }
 
-
         /// <summary>
         /// Reviews a sequence of digits and finds the sum of all digits that match the next digit in the list.
         /// The list is circular, so the digit after the last digit is the first digit in the list.
@@ -39,14 +38,14 @@ namespace advent.Days._2017
         }
 
         /// <summary>
-        /// Now, instead of considering the next digit, it wants you to consider the digit halfway around the circular list. 
+        /// Now, instead of considering the next digit, it wants you to consider the digit halfway around the circular list.
         /// That is, if your list contains 10 items, only include a digit in your sum if the digit 10/2 = 5 steps forward matches it. Fortunately, your list has an even number of elements.
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
         public override long Part2(string input)
         {
-            return Part0(input, (i, l) => (i + l / 2) % l);
+            return Part0(input, (i, l) => (i + (l / 2)) % l);
         }
     }
 }

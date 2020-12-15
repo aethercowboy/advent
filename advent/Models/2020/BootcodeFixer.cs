@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace advent.Models._2020
+﻿namespace advent.Models._2020
 {
     public class BootcodeFixer
     {

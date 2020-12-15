@@ -1,8 +1,8 @@
-﻿using System;
+﻿using advent.Collections;
+using advent.Days._2017;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Collections;
-using advent.Days._2017;
 
 namespace advent.Extensions
 {
@@ -11,12 +11,12 @@ namespace advent.Extensions
         public static T NthOrDefault<T>(this IEnumerable<T> list, int index)
         {
             return list == null
-                    ? default(T)
+                    ? default
                     : list.Skip(index).FirstOrDefault()
                 ;
         }
 
-        public static string AsString(this IEnumerable<int>list)
+        public static string AsString(this IEnumerable<int> list)
         {
             return string.Join(",", list);
         }
@@ -34,8 +34,7 @@ namespace advent.Extensions
             foreach (var loc in locs)
             {
                 var subLocs = locs.Where(x => x != loc).ToList();
-                var subRoutes = GenerateRoutes(subLocs);
-                foreach (var subRoute in subRoutes)
+                foreach (var subRoute in GenerateRoutes(subLocs))
                 {
                     var subList = new List<string> { loc };
                     subList.AddRange(subRoute);

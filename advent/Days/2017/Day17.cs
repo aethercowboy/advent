@@ -41,7 +41,7 @@ namespace advent.Days._2017
 
             for (var x = 1; x < 50_000_000; x++)
             {
-                i = (i + steps) % x + 1;
+                i = ((i + steps) % x) + 1;
 
                 if (i == 1) value = x;
             }

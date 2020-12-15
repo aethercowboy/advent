@@ -5,8 +5,8 @@ namespace advent.Models._2020
 {
     public class CustomsForm
     {
-        private Dictionary<int, int> hash;
-        private int entries;
+        private readonly Dictionary<int, int> hash;
+        private readonly int entries;
 
         public CustomsForm(IEnumerable<string> batch)
         {

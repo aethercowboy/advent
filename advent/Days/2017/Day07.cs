@@ -18,10 +18,8 @@ namespace advent.Days._2017
                 get { return Weight + Children.Values.Sum(x => x.TotalWeight); }
             }
 
-
             public int Depth => (Parent?.Depth).GetValueOrDefault() + 1;
         }
-
 
         private int Part0(string input)
         {
@@ -51,8 +49,7 @@ namespace advent.Days._2017
 
                 if (words.Count <= 2) continue;
 
-                var followers = words.Skip(3).Select(x => x.Replace(",", string.Empty));
-                foreach (var follower in followers)
+                foreach (var follower in words.Skip(3).Select(x => x.Replace(",", string.Empty)))
                 {
                     stack.TryGetValue(follower, out var child);
 
