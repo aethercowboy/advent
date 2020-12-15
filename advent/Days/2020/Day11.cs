@@ -5,7 +5,7 @@ namespace advent.Days._2020
 {
     public class Day11 : Day
     {
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var layout = new SeatLayout(input);
 

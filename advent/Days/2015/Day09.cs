@@ -62,7 +62,7 @@ namespace advent.Days._2015
             return reduceFunc(routes.Select(route => CalculateRoute(dict, route.ToList())));
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             return Part0(input, x => x.Min());
         }

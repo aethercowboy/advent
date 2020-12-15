@@ -154,7 +154,7 @@ namespace advent.Days._2015
             return _lightsList.Sum(x => x.Sum());
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             return Part0(input, ProcessLine1);
         }

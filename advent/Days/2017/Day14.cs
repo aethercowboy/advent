@@ -22,7 +22,7 @@ namespace advent.Days._2017
             return blocks;
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var blocks = Part0(input);
 

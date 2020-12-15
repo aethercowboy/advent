@@ -4,7 +4,7 @@ namespace advent.Days._2015
 {
     public class Day24 : Day
     {
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             throw new NotImplementedException();
         }

@@ -8,7 +8,7 @@ namespace advent.Days._2017
 {
     public class Day18 : Day
     {
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var duet = new Duet();
             var lines = input.Lines().ToList();
@@ -244,7 +244,7 @@ namespace advent.Days._2017
                 return GetVal(x) > 0 ? z : (BigInteger?) null;
             }
 
-            public int Part1(IList<string> lines)
+            public long Part1(IList<string> lines)
             {
                 for (BigInteger i = 0; i < lines.Count; ++i)
                 {

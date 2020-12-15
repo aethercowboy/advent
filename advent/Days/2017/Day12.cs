@@ -63,7 +63,7 @@ namespace advent.Days._2017
             return paths;
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var paths = Part0(input);
 

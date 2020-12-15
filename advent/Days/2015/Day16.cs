@@ -49,7 +49,7 @@ perfumes: 1
             return aunts;
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var aunts = Part0(input);
 

@@ -6,7 +6,7 @@ namespace advent.Days._2020
 {
     public class Day05 : Day
     {
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             return input.Lines()
                 .Select(x => new BoardingPass(x))

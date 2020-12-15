@@ -72,7 +72,7 @@ namespace advent.Days._2015
                 .Max();
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var dict = new Dictionary<string, Dictionary<string, int>>();
 

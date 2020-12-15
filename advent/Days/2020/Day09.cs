@@ -8,7 +8,7 @@ namespace advent.Days._2020
     {
         public int PreambleLength { get; set; } = 25;
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var values = input.Lines()
                 .ToInts()

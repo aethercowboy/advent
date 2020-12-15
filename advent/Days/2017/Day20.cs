@@ -11,7 +11,7 @@ namespace advent.Days._2017
         {
             return input.Lines().Select((line, i) => new Particle(i, line)).ToList();
         }
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var particles = Part0(input);
 

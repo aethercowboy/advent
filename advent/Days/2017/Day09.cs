@@ -71,7 +71,7 @@ namespace advent.Days._2017
             return responseFunc(groups.Sum(x => x.Score), garbage);
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             return Part0(input, (x, y) => x);
         }

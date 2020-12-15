@@ -10,7 +10,7 @@ namespace advent.Days._2015
     {
         private readonly Regex _numberRegex = new Regex(@"[-]?\d+", RegexOptions.Compiled);
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             return _numberRegex.Matches(input).Sum(x => x.Value.ToInt());
         }

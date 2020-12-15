@@ -75,7 +75,7 @@ namespace advent.Days._2015
             return new string(result.ToArray());
         }
 
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var rules = new List<Func<string, bool>>
             {

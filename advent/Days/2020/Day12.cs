@@ -5,7 +5,7 @@ namespace advent.Days._2020
 {
     public class Day12 : Day
     {
-        public override int Part1(string input)
+        public override long Part1(string input)
         {
             var data = input.Lines()
                 ;
