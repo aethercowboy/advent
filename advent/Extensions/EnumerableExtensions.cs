@@ -61,5 +61,14 @@ namespace advent.Extensions
             var min = cList.Min(minFunc);
             return cList.Where(x => minFunc(x) == min);
         }
+
+        public static IEnumerable<T> Intersect<T>(this IEnumerable<IEnumerable<T>> listOfLists)
+        {
+            return listOfLists.Skip(1)
+                .Aggregate(
+                new HashSet<T>(listOfLists.First()),
+                (h, e) => { h.IntersectWith(e); return h; }
+                );
+        }
     }
 }
