@@ -32,7 +32,7 @@ namespace advent.Days._2017
             };
         }
 
-        private static int Part0(string input, Func<int, int, int> resultFunc)
+        private static string Part0(string input, Func<int, int, int> resultFunc)
         {
             var dict = new Dictionary<string, int>();
 
@@ -67,15 +67,15 @@ namespace advent.Days._2017
                 localMax = Math.Max(dict[key], localMax);
             }
 
-            return resultFunc(dict.Values.Max(), localMax);
+            return resultFunc(dict.Values.Max(), localMax).ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, (x, _) => x);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, (_, y) => y);
         }

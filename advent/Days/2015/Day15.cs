@@ -112,18 +112,18 @@ namespace advent.Days._2015
             return GenerateCookies(list, Teaspoons);
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var cookies = Part0(input);
 
-            return cookies.Max(x => x.Score());
+            return cookies.Max(x => x.Score()).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var cookies = Part0(input);
 
-            return cookies.Where(x => x.Calories == 500).Max(x => x.Score());
+            return cookies.Where(x => x.Calories == 500).Max(x => x.Score()).ToString();
         }
     }
 }

@@ -22,7 +22,7 @@ David would gain 41 happiness units by sitting next to Carol.";
         public void Test01()
         {
             var result = Client.Part1(input);
-            Assert.Equal(330, result);
+            Assert.Equal(330.ToString(), result);
         }
     }
 }

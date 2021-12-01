@@ -6,7 +6,7 @@ namespace advent.Days._2020
 {
     public class Day07 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var bags = new BagHandler();
 
@@ -15,10 +15,10 @@ namespace advent.Days._2020
                 bags.AddBag(line);
             }
 
-            return bags.BagContains("shiny gold").Count;
+            return bags.BagContains("shiny gold").Count.ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var bags = new BagHandler();
 
@@ -27,7 +27,7 @@ namespace advent.Days._2020
                 bags.AddBag(line);
             }
 
-            return bags.BagInsides("shiny gold").Sum(x => x.Value);
+            return bags.BagInsides("shiny gold").Sum(x => x.Value).ToString();
         }
     }
 }

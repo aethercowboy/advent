@@ -7,9 +7,9 @@ namespace advent.Days._2015
 {
     public class Day05 : Day
     {
-        private static int Part0(string input, params Func<string, bool>[] testFuncs)
+        private static string Part0(string input, params Func<string, bool>[] testFuncs)
         {
-            return input.Split('\n').Count(line => testFuncs.All(x => x(line)));
+            return input.Split('\n').Count(line => testFuncs.All(x => x(line))).ToString();
         }
 
         private static bool HasAtLeastThreeVowels(string input)
@@ -38,8 +38,7 @@ namespace advent.Days._2015
             return DoesNotContainStrings(input, "ab", "cd", "pq", "xy");
         }
 
-
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input,
                 HasAtLeastThreeVowels,
@@ -62,7 +61,7 @@ namespace advent.Days._2015
             return letters.Select(x => new Regex($"{x}.{x}")).Any(x => x.IsMatch(input));
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input,
                 HasPairOfTwoLettersTwice,

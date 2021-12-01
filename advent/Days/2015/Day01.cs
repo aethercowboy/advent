@@ -13,13 +13,14 @@ namespace advent.Days._2015
                         : 0
             ;
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return input.Select(_toInt)
-                .Sum();
+                .Sum()
+                .ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var floor = 0;
 
@@ -33,11 +34,11 @@ namespace advent.Days._2015
 
                 if (floor < 0)
                 {
-                    return i + 1;
+                    return (i + 1).ToString();
                 }
             }
 
-            return 0;
+            return 0.ToString();
         }
     }
 }

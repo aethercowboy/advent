@@ -20,14 +20,14 @@ namespace advent.Days._2017
                 );
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var blocks = Part0(input);
 
-            return blocks.Sum(x => x.Count(y => y == '1'));
+            return blocks.Sum(x => x.Count(y => y == '1')).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var blocks = Part0(input).ToList();
 
@@ -74,7 +74,7 @@ namespace advent.Days._2017
                 }
             }
 
-            return regions.Count;
+            return regions.Count.ToString();
         }
     }
 }

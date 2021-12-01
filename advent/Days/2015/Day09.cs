@@ -38,7 +38,7 @@ namespace advent.Days._2015
             return response;
         }
 
-        private static int Part0(string input, Func<IEnumerable<int>, int> reduceFunc)
+        private static string Part0(string input, Func<IEnumerable<int>, int> reduceFunc)
         {
             var dict = new Dictionary<Tuple<string, string>, int>();
             var locs = new HashSet<string>();
@@ -58,15 +58,16 @@ namespace advent.Days._2015
 
             var routes = locs.ToList().GenerateRoutes();
 
-            return reduceFunc(routes.Select(route => CalculateRoute(dict, route.ToList())));
+            return reduceFunc(routes.Select(route => CalculateRoute(dict, route.ToList())))
+                .ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, x => x.Min());
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, x => x.Max());
         }

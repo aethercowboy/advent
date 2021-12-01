@@ -6,7 +6,7 @@ namespace advent.Days
     {
         public IConsole Console { get; set; } = new AdventConsole();
 
-        public abstract long Part1(string input);
-        public abstract long Part2(string input);
+        public abstract string Part1(string input);
+        public abstract string Part2(string input);
     }
 }

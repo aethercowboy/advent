@@ -61,22 +61,22 @@ namespace advent.Days._2017
             return paths;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var paths = Part0(input);
 
             var result = GetGroupFor(paths, new HashSet<int>(), 0);
 
-            return result.Count;
+            return result.Count.ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var paths = Part0(input);
 
             var result = GetGroups(paths);
 
-            return result.Count;
+            return result.Count.ToString();
         }
     }
 }

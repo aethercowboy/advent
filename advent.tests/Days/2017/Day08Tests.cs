@@ -14,14 +14,14 @@ c inc -20 if c == 10";
         public void Test01()
         {
             var result = Client.Part1(Input);
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
         }
 
         [Fact]
         public void Test02()
         {
             var result = Client.Part2(Input);
-            Assert.Equal(10, result);
+            Assert.Equal(10.ToString(), result);
         }
     }
 }

@@ -10,63 +10,63 @@ namespace advent.tests.Days._2017
         {
             var result = Client.Part1("1122");
 
-            Assert.Equal(3, result);
+            Assert.Equal(3.ToString(), result);
         }
 
         [Fact]
         public void Test02()
         {
             var result = Client.Part1("1111");
-            Assert.Equal(4, result);
+            Assert.Equal(4.ToString(), result);
         }
 
         [Fact]
         public void Test03()
         {
             var result = Client.Part1("1234");
-            Assert.Equal(0, result);
+            Assert.Equal(0.ToString(), result);
         }
 
         [Fact]
         public void Test04()
         {
             var result = Client.Part1("91212129");
-            Assert.Equal(9, result);
+            Assert.Equal(9.ToString(), result);
         }
 
         [Fact]
         public void Test05()
         {
             var result = Client.Part2("1212");
-            Assert.Equal(6, result);
+            Assert.Equal(6.ToString(), result);
         }
 
         [Fact]
         public void Test06()
         {
             var result = Client.Part2("1221");
-            Assert.Equal(0, result);
+            Assert.Equal(0.ToString(), result);
         }
 
         [Fact]
         public void Test07()
         {
             var result = Client.Part2("123425");
-            Assert.Equal(4, result);
+            Assert.Equal(4.ToString(), result);
         }
 
         [Fact]
         public void Test08()
         {
             var result = Client.Part2("123123");
-            Assert.Equal(12, result);
+            Assert.Equal(12.ToString(), result);
         }
 
         [Fact]
         public void Test09()
         {
             var result = Client.Part2("12131415");
-            Assert.Equal(4, result);
+            Assert.Equal(4.ToString(), result);
         }
     }
 }

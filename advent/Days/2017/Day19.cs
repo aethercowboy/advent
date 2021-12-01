@@ -1,13 +1,13 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
     public class Day19 : Day
     {
-        private int Part0(string input)
+        private string Part0(string input)
         {
             var maze = new Maze(input);
 
@@ -15,15 +15,15 @@ namespace advent.Days._2017
 
             Console.WriteOutput(output);
 
-            return maze.Steps;
+            return maze.Steps.ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input);
         }
@@ -161,7 +161,7 @@ namespace advent.Days._2017
                             }
                             else if (Direction.Item1 > 0)
                             {
-                                var down = GetValueAt(CurrentPosition.Item1 + 1, CurrentPosition.Item2);                                if (down != '|' && down != '+')
+                                var down = GetValueAt(CurrentPosition.Item1 + 1, CurrentPosition.Item2); if (down != '|' && down != '+')
                                 {
                                     if (down == '-')
                                     {

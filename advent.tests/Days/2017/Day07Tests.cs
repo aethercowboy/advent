@@ -32,7 +32,7 @@ cntj (57)";
         {
             var result = Client.Part2(Input);
 
-            Assert.Equal(60, result);
+            Assert.Equal(60.ToString(), result);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace advent.tests.Days._2017
         public void Test01()
         {
             var result = Client.Part1(input);
-            Assert.Equal(638, result);
+            Assert.Equal(638.ToString(), result);
         }
     }
 }

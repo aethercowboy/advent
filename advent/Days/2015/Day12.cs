@@ -1,8 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using Newtonsoft.Json.Linq;
 using System.Linq;
 using System.Text.RegularExpressions;
-using advent.Extensions;
-using Newtonsoft.Json.Linq;
 
 namespace advent.Days._2015
 {
@@ -10,16 +9,16 @@ namespace advent.Days._2015
     {
         private readonly Regex _numberRegex = new Regex(@"[-]?\d+", RegexOptions.Compiled);
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
-            return _numberRegex.Matches(input).Sum(x => x.Value.ToInt());
+            return _numberRegex.Matches(input).Sum(x => x.Value.ToInt()).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var json = JToken.Parse($"[{input}]");
 
-            return CalculateSum(json);
+            return CalculateSum(json).ToString();
         }
 
         private int CalculateSum(JToken json)
@@ -34,7 +33,7 @@ namespace advent.Days._2015
                 }
                 else if (element.Type == JTokenType.Object)
                 {
-                    if (element.Any(x => x.Type == JTokenType.Property && ((JProperty) x).Value.ToString() == "red")) continue;
+                    if (element.Any(x => x.Type == JTokenType.Property && ((JProperty)x).Value.ToString() == "red")) continue;
                     value += CalculateSum(element);
                 }
                 else if (element.Type == JTokenType.Array)

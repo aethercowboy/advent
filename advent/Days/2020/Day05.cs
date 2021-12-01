@@ -6,15 +6,16 @@ namespace advent.Days._2020
 {
     public class Day05 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return input.Lines()
                 .Select(x => new BoardingPass(x))
                 .Max(x => x.SeatId)
+                .ToString()
                 ;
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var passes = input.Lines()
                 .Select(x => new BoardingPass(x))
@@ -28,7 +29,7 @@ namespace advent.Days._2020
 
             var total = count * (max + min) / 2;
 
-            return total - sum;
+            return (total - sum).ToString();
         }
     }
 }

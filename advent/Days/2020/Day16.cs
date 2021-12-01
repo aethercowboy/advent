@@ -5,14 +5,14 @@ namespace advent.Days._2020
 {
     public class Day16 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var ticketReader = new TicketReader(input);
 
-            return ticketReader.CheckTickets();
+            return ticketReader.CheckTickets().ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var ticketReader = new TicketReader(input);
 
@@ -25,7 +25,7 @@ namespace advent.Days._2020
                 values *= ticketReader.MyTicket.Fields[r.Key];
             }
 
-            return values;
+            return values.ToString();
         }
     }
 }

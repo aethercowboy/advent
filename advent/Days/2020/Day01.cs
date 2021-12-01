@@ -5,7 +5,7 @@ namespace advent.Days._2020
 {
     public class Day01 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var data = input.Lines()
                 .Select(x => int.Parse(x))
@@ -24,15 +24,15 @@ namespace advent.Days._2020
 
                     if (a + b == 2020)
                     {
-                        return a * b;
+                        return (a * b).ToString();
                     }
                 }
             }
 
-            return 0;
+            return 0.ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var data = input.Lines()
                 .Select(x => int.Parse(x))
@@ -57,13 +57,13 @@ namespace advent.Days._2020
 
                         if (a + b + c == 2020)
                         {
-                            return a * b * c;
+                            return (a * b * c).ToString();
                         }
                     }
                 }
             }
 
-            return 0;
+            return 0.ToString();
         }
     }
 }

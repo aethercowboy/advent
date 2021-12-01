@@ -5,7 +5,7 @@ namespace advent.Days._2020
 {
     public class Day13 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var lines = input.Lines().ToList();
 
@@ -20,10 +20,10 @@ namespace advent.Days._2020
                 i++;
             }
 
-            return busses.FirstOrDefault(x => i % x == 0) * (i - index);
+            return (busses.FirstOrDefault(x => i % x == 0) * (i - index)).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var busSchedules = input.Lines()
                 .Skip(1)
@@ -62,7 +62,7 @@ namespace advent.Days._2020
 
                     if (lockedIn == busDepartures.Count - 1)
                     {
-                        return testTime;
+                        return testTime.ToString();
                     }
                 }
             }

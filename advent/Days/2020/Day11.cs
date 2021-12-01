@@ -5,7 +5,7 @@ namespace advent.Days._2020
 {
     public class Day11 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var layout = new SeatLayout(input);
 
@@ -18,10 +18,10 @@ namespace advent.Days._2020
                 status = layout.Process();
             }
 
-            return layout.OccupiedCount();
+            return layout.OccupiedCount().ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var layout = new SeatLayout(input);
 
@@ -34,7 +34,7 @@ namespace advent.Days._2020
                 status = layout.Process2();
             }
 
-            return layout.OccupiedCount();
+            return layout.OccupiedCount().ToString();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace advent.Days._2017
             return firewall;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var firewall = Part0(input);
 
@@ -43,15 +43,16 @@ namespace advent.Days._2017
                 firewall.Tick();
             }
 
-            return severity;
+            return severity.ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var firewall = Part0(input);
 
             return Enumerable.Range(0, int.MaxValue)
-                .FirstOrDefault(x => firewall.Layers.All(y => y.TimeTravel(x) != 0));
+                .FirstOrDefault(x => firewall.Layers.All(y => y.TimeTravel(x) != 0))
+                .ToString();
         }
     }
 

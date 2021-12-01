@@ -75,7 +75,7 @@ namespace advent.Days._2015
             return new string(result.ToArray());
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var rules = new List<Func<string, bool>>
             {
@@ -100,12 +100,12 @@ namespace advent.Days._2015
                 str = IncreaseString(str);
             }
 
-            return response;
+            return response.ToString();
         }
 
         private string Key { get; set; }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             Console.Wrote += OnWrote;
 

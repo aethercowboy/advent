@@ -14,7 +14,7 @@ Dancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.";
             Client.Runtime = 1000;
 
             var result = Client.Part1(Input);
-            Assert.Equal(1120, result);
+            Assert.Equal(1120.ToString(), result);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ Dancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.";
         {
             Client.Runtime = 1000;
             var result = Client.Part2(Input);
-            Assert.Equal(689, result);
+            Assert.Equal(689.ToString(), result);
         }
     }
 }

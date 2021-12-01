@@ -67,22 +67,18 @@ namespace advent.Days._2017
             return dancers.ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var result = Dance(input, 1);
 
-            Console.WriteOutput(result);
-
-            return 0;
+            return result;
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var result = Dance(input, 1_000_000_000);
 
-            Console.WriteOutput(result);
-
-            return 0;
+            return result;
         }
     }
 

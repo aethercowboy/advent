@@ -15,7 +15,7 @@ namespace advent.Days._2015
             return string.Concat(hash.Select(x => x.ToString("X2")));
         }
 
-        private int Part0(string input, int zeroes)
+        private string Part0(string input, int zeroes)
         {
             var startString = 0.ToString($"D{zeroes}");
 
@@ -27,19 +27,19 @@ namespace advent.Days._2015
 
                 if (hashStr.StartsWith(startString))
                 {
-                    return i;
+                    return i.ToString();
                 }
             }
 
-            return -1;
+            return (-1).ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, 5);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, 6);
         }

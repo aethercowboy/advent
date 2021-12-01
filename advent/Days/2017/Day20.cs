@@ -11,11 +11,11 @@ namespace advent.Days._2017
         {
             return input.Lines().Select((line, i) => new Particle(i, line)).ToList();
         }
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var particles = Part0(input);
 
-            return particles.WithMin(x => x.Acceleration.ManhattanDistance()).First().Index;
+            return particles.WithMin(x => x.Acceleration.ManhattanDistance()).First().Index.ToString();
         }
 
         private static IEnumerable<Particle> RemoveCollisions(ICollection<Particle> particles)
@@ -34,7 +34,7 @@ namespace advent.Days._2017
             }
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var particles = Part0(input);
 
@@ -48,7 +48,7 @@ namespace advent.Days._2017
                 particles = RemoveCollisions(particles).ToList();
             }
 
-            return particles.Count;
+            return particles.Count.ToString();
         }
     }
 

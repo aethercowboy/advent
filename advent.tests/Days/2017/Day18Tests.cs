@@ -19,7 +19,7 @@ jgz a -1
 set a 1
 jgz a -2";
             var result = Client.Part1(input);
-            Assert.Equal(4, result);
+            Assert.Equal(4.ToString(), result);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ rcv d
 rcv e
 rcv f";
             var result = Client.Part2(input);
-            Assert.Equal(3, result);
+            Assert.Equal(3.ToString(), result);
         }
     }
 }

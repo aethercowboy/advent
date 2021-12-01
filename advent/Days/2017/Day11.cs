@@ -36,18 +36,18 @@ namespace advent.Days._2017
             return hex;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var hex = Part0(input);
 
-            return hex.DistanceToStart();
+            return hex.DistanceToStart().ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var hex = Part0(input);
 
-            return hex.MaxDistance;
+            return hex.MaxDistance.ToString();
         }
     }
 

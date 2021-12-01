@@ -25,7 +25,7 @@ abcz";
 
             var result = day.Part1(input);
 
-            Assert.Equal(6, result);
+            Assert.Equal(6.ToString(), result);
         }
 
         [Fact]
@@ -33,7 +33,7 @@ abcz";
         {
             var result = day.Part1(data);
 
-            Assert.Equal(11, result);
+            Assert.Equal(11.ToString(), result);
         }
 
         [Fact]
@@ -41,7 +41,7 @@ abcz";
         {
             var result = day.Part2(data);
 
-            Assert.Equal(6, result);
+            Assert.Equal(6.ToString(), result);
         }
     }
 }

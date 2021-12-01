@@ -8,14 +8,14 @@ namespace advent.Days._2017
 {
     public class Day18 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var lines = input.Lines().ToList();
 
-            return Duet.Part1(lines);
+            return Duet.Part1(lines).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var duet0 = new Duet(0);
             var duet1 = new Duet(1);
@@ -50,7 +50,7 @@ namespace advent.Days._2017
                 j += r1;
             }
 
-            return duet1.Sends;
+            return duet1.Sends.ToString();
         }
 
         public class Duet

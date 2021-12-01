@@ -51,14 +51,14 @@ namespace advent.Days._2015
                 );
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
-            return Part0(input, CalculateMemoryLength);
+            return Part0(input, CalculateMemoryLength).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
-            return -Part0(input, CalculateEncodedLength);
+            return (-Part0(input, CalculateEncodedLength)).ToString();
         }
     }
 }

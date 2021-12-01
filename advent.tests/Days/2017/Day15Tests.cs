@@ -12,14 +12,14 @@ Generator B starts with 8921";
         public void Test01()
         {
             var result = Client.Part1(Input);
-            Assert.Equal(588, result);
+            Assert.Equal(588.ToString(), result);
         }
 
         [Fact]
         public void Test02()
         {
             var result = Client.Part2(Input);
-            Assert.Equal(309, result);
+            Assert.Equal(309.ToString(), result);
         }
     }
 }

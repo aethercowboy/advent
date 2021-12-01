@@ -7,9 +7,10 @@ namespace advent.Days._2017
 {
     public class Day02 : Day
     {
-        private static int ProcessLine(string input, Func<IList<int>, int> numberFunc)
+        private static string ProcessLine(string input, Func<IList<int>, int> numberFunc)
         {
-            return input.Lines().Sum(x => numberFunc(x.Words().ToInts().ToList()));
+            return input.Lines().Sum(x => numberFunc(x.Words().ToInts().ToList()))
+                .ToString();
         }
 
         /// <summary>
@@ -18,7 +19,7 @@ namespace advent.Days._2017
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return ProcessLine(input, numbers =>
             {
@@ -36,7 +37,7 @@ namespace advent.Days._2017
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return ProcessLine(input, numbers =>
             {

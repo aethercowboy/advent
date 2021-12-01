@@ -9,7 +9,7 @@ namespace advent.Days._2020
 
     public class Day04 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return PartX(input, ProcessBuffer);
         }
@@ -42,12 +42,12 @@ namespace advent.Days._2020
             return 0;
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return PartX(input, ProcessBuffer2);
         }
 
-        private static int PartX(string input, Process process)
+        private static string PartX(string input, Process process)
         {
             var lines = input.Lines(includeBlankLines: true)
                 .ToList();
@@ -69,7 +69,7 @@ namespace advent.Days._2020
 
             valid += process(buffer);
 
-            return valid;
+            return valid.ToString();
         }
     }
 }

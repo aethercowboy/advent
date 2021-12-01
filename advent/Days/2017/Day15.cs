@@ -27,20 +27,20 @@ namespace advent.Days._2017
                 .Select(t => new Generator(t.key, t.val, t.fac[0], t.fac[1]))
                 .ToList();
         }
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var judge = new Judge(40_000_000);
 
             var generators = GetGenerators(input);
 
-            return judge.Competition(generators, g => g.NextValue());
+            return judge.Competition(generators, g => g.NextValue()).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var judge = new Judge(5_000_000);
             var generators = GetGenerators(input);
-            return judge.Competition(generators, g => g.NextSpecialValue());
+            return judge.Competition(generators, g => g.NextSpecialValue()).ToString();
         }
     }
 

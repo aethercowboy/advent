@@ -19,7 +19,7 @@ NOT y -> i";
         {
             Client.Key = "d";
             var result = Client.Part1(Input);
-            Assert.Equal(72, result);
+            Assert.Equal("72", result);
         }
 
         [Fact]
@@ -27,7 +27,7 @@ NOT y -> i";
         {
             Client.Key = "e";
             var result = Client.Part1(Input);
-            Assert.Equal(507, result);
+            Assert.Equal("507", result);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ NOT y -> i";
         {
             Client.Key = "f";
             var result = Client.Part1(Input);
-            Assert.Equal(492, result);
+            Assert.Equal(492.ToString(), result);
         }
 
         [Fact]
@@ -43,7 +43,7 @@ NOT y -> i";
         {
             Client.Key = "g";
             var result = Client.Part1(Input);
-            Assert.Equal(114, result);
+            Assert.Equal(114.ToString(), result);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ NOT y -> i";
         {
             Client.Key = "h";
             var result = Client.Part1(Input);
-            Assert.Equal(65412, result);
+            Assert.Equal(65412.ToString(), result);
         }
 
         [Fact]
@@ -59,7 +59,7 @@ NOT y -> i";
         {
             Client.Key = "i";
             var result = Client.Part1(Input);
-            Assert.Equal(65079, result);
+            Assert.Equal(65079.ToString(), result);
         }
 
         [Fact]
@@ -67,7 +67,7 @@ NOT y -> i";
         {
             Client.Key = "x";
             var result = Client.Part1(Input);
-            Assert.Equal(123, result);
+            Assert.Equal(123.ToString(), result);
         }
 
         [Fact]
@@ -75,14 +75,14 @@ NOT y -> i";
         {
             Client.Key = "y";
             var result = Client.Part1(Input);
-            Assert.Equal(456, result);
+            Assert.Equal(456.ToString(), result);
         }
 
         [Fact]
         public void Test09()
         {
             var result = Client.Part1("NOT 1 -> a");
-            Assert.Equal(65534, result);
+            Assert.Equal(65534.ToString(), result);
         }
     }
 }

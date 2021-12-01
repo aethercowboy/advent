@@ -6,7 +6,7 @@ namespace advent.Days._2020
 {
     public class Day10 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var jolts = input.Lines()
                 .ToInts()
@@ -32,10 +32,10 @@ namespace advent.Days._2020
                 joltometer.AddJolt(diff);
             }
 
-            return joltometer.GetJoltage();
+            return joltometer.GetJoltage().ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var jolts = input.Lines()
                 .ToInts()
@@ -71,7 +71,7 @@ namespace advent.Days._2020
                 }
             }
 
-            return tally[^1];
+            return tally[^1].ToString();
         }
     }
 }

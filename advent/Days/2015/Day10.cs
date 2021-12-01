@@ -27,15 +27,15 @@ namespace advent.Days._2015
             return string.Concat(str);
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var response = Enumerable.Range(0, Generations)
                 .Aggregate(input, (current, _) => LookAndSay(current));
 
-            return response.Length;
+            return response.Length.ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             Generations = 50;
             return Part1(input);

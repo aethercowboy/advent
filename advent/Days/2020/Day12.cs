@@ -5,7 +5,7 @@ namespace advent.Days._2020
 {
     public class Day12 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var data = input.Lines()
                 ;
@@ -17,10 +17,10 @@ namespace advent.Days._2020
                 ship.Process(line);
             }
 
-            return ship.GetManhattanDistance();
+            return ship.GetManhattanDistance().ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var data = input.Lines();
 
@@ -31,7 +31,7 @@ namespace advent.Days._2020
                 waypoint.Process(line);
             }
 
-            return waypoint.GetManhattanDistance();
+            return waypoint.GetManhattanDistance().ToString();
         }
     }
 }

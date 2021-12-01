@@ -13,14 +13,14 @@ Dublin to Belfast = 141";
         public void Test01()
         {
             var response = Client.Part1(input);
-            Assert.Equal(605, response);
+            Assert.Equal(605.ToString(), response);
         }
 
         [Fact]
         public void Test02()
         {
             var response = Client.Part2(input);
-            Assert.Equal(982, response);
+            Assert.Equal(982.ToString(), response);
         }
     }
 }

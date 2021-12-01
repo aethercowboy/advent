@@ -21,7 +21,7 @@ namespace advent.tests.Days._2020
         {
             var result = day.Part1(data);
 
-            Assert.Equal(25, result);
+            Assert.Equal(25.ToString(), result);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace advent.tests.Days._2020
         {
             var result = day.Part2(data);
 
-            Assert.Equal(286, result);
+            Assert.Equal(286.ToString(), result);
         }
     }
 }

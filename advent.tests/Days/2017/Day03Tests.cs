@@ -9,70 +9,70 @@ namespace advent.tests.Days._2017
         public void Test01()
         {
             var result = Client.Part1("1");
-            Assert.Equal(0, result);
+            Assert.Equal(0.ToString(), result);
         }
 
         [Fact]
         public void Test02()
         {
             var result = Client.Part1("12");
-            Assert.Equal(3, result);
+            Assert.Equal(3.ToString(), result);
         }
 
         [Fact]
         public void Test03()
         {
             var result = Client.Part1("23");
-            Assert.Equal(2, result);
+            Assert.Equal(2.ToString(), result);
         }
 
         [Fact]
         public void Test04()
         {
             var result = Client.Part1("1024");
-            Assert.Equal(31, result);
+            Assert.Equal(31.ToString(), result);
         }
 
         [Fact]
         public void Test05()
         {
             var result = Client.Part2("1");
-            Assert.Equal(2, result);
+            Assert.Equal(2.ToString(), result);
         }
 
         [Fact]
         public void Test06()
         {
             var result = Client.Part2("2");
-            Assert.Equal(4, result);
+            Assert.Equal(4.ToString(), result);
         }
 
         [Fact]
         public void Test07()
         {
             var result = Client.Part2("4");
-            Assert.Equal(5, result);
+            Assert.Equal(5.ToString(), result);
         }
 
         [Fact]
         public void Test08()
         {
             var result = Client.Part2("5");
-            Assert.Equal(10, result);
+            Assert.Equal(10.ToString(), result);
         }
 
         [Fact]
         public void Test09()
         {
             var result = Client.Part2("10");
-            Assert.Equal(11, result);
+            Assert.Equal(11.ToString(), result);
         }
 
         [Fact]
         public void Test10()
         {
             var result = Client.Part2("11");
-            Assert.Equal(23, result);
+            Assert.Equal(23.ToString(), result);
         }
     }
 }

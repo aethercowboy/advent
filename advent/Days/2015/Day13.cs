@@ -71,22 +71,22 @@ namespace advent.Days._2015
             return routes.Max(route => CalculateHappiness(dict, route));
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var dict = new Dictionary<string, Dictionary<string, int>>();
 
             PopulateHappiness(dict, input);
 
-            return MaximizeHappiness(dict);
+            return MaximizeHappiness(dict).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var dict = new Dictionary<string, Dictionary<string, int>>();
 
             PopulateHappiness(dict, input, "Me");
 
-            return MaximizeHappiness(dict);
+            return MaximizeHappiness(dict).ToString();
         }
     }
 }

@@ -10,10 +10,10 @@ namespace advent.tests.Days._2015
         {
             var result = Client.Part1("(())");
 
-            Assert.Equal(0, result);
+            Assert.Equal("0", result);
 
             var result2 = Client.Part1("()()");
-            Assert.Equal(0, result2);
+            Assert.Equal("0", result2);
         }
 
         [Fact]
@@ -21,10 +21,10 @@ namespace advent.tests.Days._2015
         {
             var result = Client.Part1("(((");
 
-            Assert.Equal(3, result);
+            Assert.Equal("3", result);
 
             var result2 = Client.Part1("(()(()(");
-            Assert.Equal(3, result2);
+            Assert.Equal("3", result2);
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace advent.tests.Days._2015
         {
             var result = Client.Part1("))(((((");
 
-            Assert.Equal(3, result);
+            Assert.Equal("3", result);
         }
 
         [Fact]
@@ -40,10 +40,10 @@ namespace advent.tests.Days._2015
         {
             var result = Client.Part1("())");
 
-            Assert.Equal(-1, result);
+            Assert.Equal("-1", result);
 
             var result2 = Client.Part1("))(");
-            Assert.Equal(-1, result2);
+            Assert.Equal("-1", result2);
         }
 
         [Fact]
@@ -51,10 +51,10 @@ namespace advent.tests.Days._2015
         {
             var result = Client.Part1(")))");
 
-            Assert.Equal(-3, result);
+            Assert.Equal("-3", result);
 
             var result2 = Client.Part1(")())())");
-            Assert.Equal(-3, result2);
+            Assert.Equal("-3", result2);
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace advent.tests.Days._2015
         {
             var result = Client.Part2(")");
 
-            Assert.Equal(1, result);
+            Assert.Equal("1", result);
         }
 
         [Fact]
@@ -70,7 +70,7 @@ namespace advent.tests.Days._2015
         {
             var result = Client.Part2("()())");
 
-            Assert.Equal(5, result);
+            Assert.Equal("5", result);
         }
     }
 }

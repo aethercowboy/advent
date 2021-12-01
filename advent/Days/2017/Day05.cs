@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -12,7 +12,7 @@ namespace advent.Days._2017
             return input.Lines().ToInts().ToList();
         }
 
-        private static int NavigateList(string input, Func<int,int> valFunc)
+        private static string NavigateList(string input, Func<int, int> valFunc)
         {
             var list = BuildList(input);
 
@@ -30,15 +30,15 @@ namespace advent.Days._2017
                 i = next;
             }
 
-            return steps;
+            return steps.ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
-            return NavigateList(input, x=> x + 1);
+            return NavigateList(input, x => x + 1);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return NavigateList(input, x =>
                 x >= 3

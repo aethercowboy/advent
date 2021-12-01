@@ -17,14 +17,14 @@ namespace advent.tests.Days._2017
         public void Test01()
         {
             var result = Client.Part1(Input);
-            Assert.Equal(6, result);
+            Assert.Equal(6.ToString(), result);
         }
 
         [Fact]
         public void Test02()
         {
             var result = Client.Part2(Input);
-            Assert.Equal(2, result);
+            Assert.Equal(2.ToString(), result);
         }
     }
 }

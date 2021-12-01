@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using advent.Collections;
+﻿using advent.Collections;
 using advent.Extensions;
+using System.Linq;
 
 namespace advent.Days._2017
 {
@@ -22,16 +22,16 @@ namespace advent.Days._2017
             return ring;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var ring = Spinlock(input, 2017);
 
             var i = ring.IndexOf(2017);
 
-            return ring[i + 1];
+            return ring[i + 1].ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var steps = input.ToInt();
 
@@ -46,7 +46,7 @@ namespace advent.Days._2017
                 if (i == 1) value = x;
             }
 
-            return value;
+            return value.ToString();
         }
     }
 }

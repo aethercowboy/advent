@@ -14,7 +14,7 @@ namespace advent.tests.Days._2015
         public void Test01()
         {
             var result = Client.Part1("abcdefgh");
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
             Assert.Equal("abcdffaa", Output);
         }
 
@@ -22,7 +22,7 @@ namespace advent.tests.Days._2015
         public void Test02()
         {
             var result = Client.Part1("ghijklmn");
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
             Assert.Equal("ghjaabcc", Output);
         }
 

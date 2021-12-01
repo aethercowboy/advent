@@ -125,7 +125,7 @@ namespace advent.Days._2015
             ProcessLine0(input, Increase, Decrease, Increase2);
         }
 
-        private int Part0(string input, Action<string> lineFunc)
+        private string Part0(string input, Action<string> lineFunc)
         {
             _lightsList = new List<List<int>>();
 
@@ -145,15 +145,15 @@ namespace advent.Days._2015
                 lineFunc(line);
             }
 
-            return _lightsList.Sum(x => x.Sum());
+            return _lightsList.Sum(x => x.Sum()).ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, ProcessLine1);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, ProcessLine2);
         }

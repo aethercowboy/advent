@@ -6,17 +6,17 @@ namespace advent.Days._2020
 {
     public class Day15 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return PartX(input, 2020);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return PartX(input, 30000000);
         }
 
-        private static long PartX(string input, int iterations)
+        private static string PartX(string input, int iterations)
         {
             var digits = input.Split(',').ToInts()
                 .ToList();
@@ -37,7 +37,7 @@ namespace advent.Days._2020
                 }
             }
 
-            return data.LastNumber;
+            return data.LastNumber.ToString();
         }
     }
 }

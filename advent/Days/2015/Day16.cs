@@ -49,7 +49,7 @@ perfumes: 1
             return aunts;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var aunts = Part0(input);
 
@@ -64,10 +64,10 @@ perfumes: 1
 
             var sue = aunts.Single();
 
-            return sue.Index;
+            return sue.Index.ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var aunts = Part0(input);
 
@@ -100,7 +100,7 @@ perfumes: 1
 
             var sue = aunts.Single();
 
-            return sue.Index;
+            return sue.Index.ToString();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace advent.tests.Days._2017
         {
             const string input = "aa bb cc dd ee";
             var result = Client.Part1(input);
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
         }
 
         [Fact]
@@ -18,7 +18,7 @@ namespace advent.tests.Days._2017
         {
             const string input = "aa bb cc dd aa";
             var result = Client.Part1(input);
-            Assert.Equal(0, result);
+            Assert.Equal(0.ToString(), result);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace advent.tests.Days._2017
         {
             const string input = "aa bb cc dd aaa";
             var result = Client.Part1(input);
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace advent.tests.Days._2017
 aa bb cc dd aa 
 aa bb cc dd aaa";
             var result = Client.Part1(input);
-            Assert.Equal(2, result);
+            Assert.Equal(2.ToString(), result);
         }
 
         [Fact]
@@ -44,7 +44,7 @@ aa bb cc dd aaa";
         {
             const string input = "abcde fghij";
             var result = Client.Part2(input);
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
         }
 
         [Fact]
@@ -52,7 +52,7 @@ aa bb cc dd aaa";
         {
             const string input = "abcde xyz ecdab";
             var result = Client.Part2(input);
-            Assert.Equal(0, result);
+            Assert.Equal(0.ToString(), result);
         }
 
         [Fact]
@@ -60,7 +60,7 @@ aa bb cc dd aaa";
         {
             const string input = "a ab abc abd abf abj";
             var result = Client.Part2(input);
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
         }
 
         [Fact]
@@ -68,7 +68,7 @@ aa bb cc dd aaa";
         {
             const string input = "iiii oiii ooii oooi oooo";
             var result = Client.Part2(input);
-            Assert.Equal(1, result);
+            Assert.Equal(1.ToString(), result);
         }
 
         [Fact]
@@ -76,7 +76,7 @@ aa bb cc dd aaa";
         {
             const string input = "oiii ioii iioi iiio";
             var result = Client.Part2(input);
-            Assert.Equal(0, result);
+            Assert.Equal(0.ToString(), result);
         }
 
         [Fact]
@@ -88,7 +88,7 @@ a ab abc abd abf abj
 iiii oiii ooii oooi oooo
 oiii ioii iioi iiio";
             var result = Client.Part2(input);
-            Assert.Equal(3, result);
+            Assert.Equal(3.ToString(), result);
         }
     }
 }

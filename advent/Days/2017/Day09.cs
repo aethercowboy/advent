@@ -14,7 +14,7 @@ namespace advent.Days._2017
             public int Score => (Parent?.Score).GetValueOrDefault() + 1;
         }
 
-        private static int Part0(string input, Func<int, int, int> responseFunc)
+        private static string Part0(string input, Func<int, int, int> responseFunc)
         {
             var groups = new List<Group>();
             Group current = null;
@@ -71,15 +71,15 @@ namespace advent.Days._2017
                 }
             }
 
-            return responseFunc(groups.Sum(x => x.Score), garbage);
+            return responseFunc(groups.Sum(x => x.Score), garbage).ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, (x, _) => x);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, (_, y) => y);
         }

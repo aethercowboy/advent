@@ -54,13 +54,13 @@ namespace advent.Days._2017
             return result;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var lengths = input.Split(",").ToInts();
 
             var list = Part0(List, lengths);
 
-            return list[0] * list[1];
+            return (list[0] * list[1]).ToString();
         }
 
         public static string KnotHash(string input, IRing<int> ring)
@@ -75,13 +75,11 @@ namespace advent.Days._2017
             return response.ToHex();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var response = KnotHash(input, List);
 
-            Console.WriteOutput(response);
-
-            return 0;
+            return response;
         }
     }
 }

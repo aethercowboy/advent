@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using advent.Extensions;
+using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2017
 {
@@ -21,7 +21,7 @@ namespace advent.Days._2017
             public int Depth => (Parent?.Depth).GetValueOrDefault() + 1;
         }
 
-        private int Part0(string input)
+        private string Part0(string input)
         {
             var stack = new Dictionary<string, Disc>();
 
@@ -103,15 +103,15 @@ namespace advent.Days._2017
                 .Select(x => x.Weight - x.TotalWeight + goal)
                 .FirstOrDefault();
 
-            return value.GetValueOrDefault();
+            return value.GetValueOrDefault().ToString();
         }
 
-        public override long Part1(string input)
-        {  
+        public override string Part1(string input)
+        {
             return Part0(input);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input);
         }

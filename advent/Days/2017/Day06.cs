@@ -20,7 +20,7 @@ namespace advent.Days._2017
             }
         }
 
-        public static int Part0(string input, Func<int, int, int> resultFunc)
+        public static string Part0(string input, Func<int, int, int> resultFunc)
         {
             var set = new Dictionary<string, int>();
 
@@ -36,15 +36,15 @@ namespace advent.Days._2017
 
             var loopSize = set.Count - set[values.AsString()];
 
-            return resultFunc(steps, loopSize);
+            return resultFunc(steps, loopSize).ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, (x, _) => x);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, (_, y) => y);
         }

@@ -93,20 +93,20 @@ namespace advent.Days._2017
             return 0;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var num = input.ToInt();
 
             var pos = GetPosition(num);
 
-            return Math.Abs(pos.Item1) + Math.Abs(pos.Item2);
+            return (Math.Abs(pos.Item1) + Math.Abs(pos.Item2)).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var num = input.ToInt();
 
-            return GetLowestGt(num);
+            return GetLowestGt(num).ToString();
         }
     }
 }

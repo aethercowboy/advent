@@ -10,14 +10,14 @@ namespace advent.Days._2020
 {
     public class Day03 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var lines = input.Lines()
                 .ToList();
 
             var slope = new Tuple<int, int>(3, 1);
 
-            return TreesEncountered(lines, slope);
+            return TreesEncountered(lines, slope).ToString();
         }
 
         internal static int TreesEncountered(List<string> lines, Tuple<int, int> slope)
@@ -41,7 +41,7 @@ namespace advent.Days._2020
             return trees;
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var lines = input.Lines()
                 .ToList();
@@ -64,7 +64,7 @@ namespace advent.Days._2020
                 product *= trees;
             }
 
-            return product;
+            return product.ToString();
         }
     }
 }

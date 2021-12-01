@@ -29,7 +29,7 @@ namespace advent.Days._2015
             }
         }
 
-        private static int Part0(string input, params Tuple<int, int>[] santas)
+        private static string Part0(string input, params Tuple<int, int>[] santas)
         {
             var i = 0;
 
@@ -51,17 +51,17 @@ namespace advent.Days._2015
                 i = (i + 1) % santas.Length;
             }
 
-            return houses.Count;
+            return houses.Count.ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var santa = new Tuple<int, int>(0, 0);
 
             return Part0(input, santa);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var santa = new Tuple<int, int>(0, 0);
             var robo = new Tuple<int, int>(0, 0);

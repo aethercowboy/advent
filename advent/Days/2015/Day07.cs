@@ -117,16 +117,16 @@ namespace advent.Days._2015
             return dict;
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             ValueDict.Clear();
 
             var dict = BuildDict(input);
 
-            return CalculateValue(dict, Key);
+            return CalculateValue(dict, Key).ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             ValueDict.Clear();
 
@@ -138,7 +138,7 @@ namespace advent.Days._2015
 
             dict["b"] = val.ToString();
 
-            return CalculateValue(dict, Key);
+            return CalculateValue(dict, Key).ToString();
         }
     }
 }

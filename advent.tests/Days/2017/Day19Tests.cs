@@ -23,7 +23,7 @@ namespace advent.tests.Days._2017
         public void Test02()
         {
             var result = Client.Part2(input);
-            Assert.Equal(38, result);
+            Assert.Equal(38.ToString(), result);
         }
     }
 }

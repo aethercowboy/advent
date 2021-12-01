@@ -4,7 +4,7 @@ namespace advent.Days._2017
 {
     public class Day01 : Day
     {
-        public static int Part0(string input, Func<int, int, int> nextIdxFunc)
+        public static string Part0(string input, Func<int, int, int> nextIdxFunc)
         {
             var output = 0;
 
@@ -23,7 +23,7 @@ namespace advent.Days._2017
                 output += currentInt;
             }
 
-            return output;
+            return output.ToString();
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace advent.Days._2017
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, (i, l) => (i + 1) % l);
         }
@@ -43,7 +43,7 @@ namespace advent.Days._2017
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, (i, l) => (i + (l / 2)) % l);
         }

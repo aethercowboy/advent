@@ -6,12 +6,12 @@ namespace advent.Days._2020
 {
     public class Day06 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return PartX(input, ProcessBatch);
         }
 
-        private static int PartX(string input, Process process)
+        private static string PartX(string input, Process process)
         {
             var lines = input.Lines(includeBlankLines: true);
 
@@ -33,7 +33,7 @@ namespace advent.Days._2020
 
             value += process(batch);
 
-            return value;
+            return value.ToString();
         }
 
         private int ProcessBatch(IList<string> batch)
@@ -45,7 +45,7 @@ namespace advent.Days._2020
             return form.GetValue();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return PartX(input, ProcessBatch2);
         }

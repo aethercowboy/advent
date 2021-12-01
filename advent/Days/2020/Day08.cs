@@ -6,7 +6,7 @@ namespace advent.Days._2020
 {
     public class Day08 : Day
     {
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var lines = input.Lines()
                 .ToArray();
@@ -15,17 +15,17 @@ namespace advent.Days._2020
 
             bootcode.Execute();
 
-            return bootcode.Accumulator;
+            return bootcode.Accumulator.ToString();
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             var lines = input.Lines()
                 .ToArray();
 
             var bootcode = new BootcodeFixer(lines);
 
-            return bootcode.Execute();
+            return bootcode.Execute().ToString();
         }
     }
 }

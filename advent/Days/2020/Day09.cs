@@ -8,7 +8,7 @@ namespace advent.Days._2020
     {
         public int PreambleLength { get; set; } = 25;
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             var values = input.Lines()
                 .ToInts()
@@ -22,11 +22,11 @@ namespace advent.Days._2020
 
                 if (!IsValid(value, range))
                 {
-                    return value;
+                    return value.ToString();
                 }
             }
 
-            return 0;
+            return 0.ToString();
         }
 
         private static bool IsValid(int number, List<int> range)
@@ -37,9 +37,9 @@ namespace advent.Days._2020
                 .Any(x => x == number);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
-            var target = Part1(input);
+            var target = long.Parse(Part1(input));
 
             var values = input.Lines()
                 .ToInts()
@@ -65,12 +65,12 @@ namespace advent.Days._2020
                     {
                         var range = values.GetRange(i, j - i);
 
-                        return range.Min() + range.Max();
+                        return (range.Min() + range.Max()).ToString();
                     }
                 }
             }
 
-            return 0;
+            return 0.ToString();
         }
     }
 }

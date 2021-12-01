@@ -1,7 +1,7 @@
-﻿using System;
+﻿using advent.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using advent.Extensions;
 
 namespace advent.Days._2015
 {
@@ -81,21 +81,21 @@ namespace advent.Days._2015
             return GetWinning(list, x => x.Score);
         }
 
-        private int Part0(string input, Func<IEnumerable<Deer>, int> winningFunc)
+        private string Part0(string input, Func<IEnumerable<Deer>, int> winningFunc)
         {
             var list = PopulateRates(input);
 
             RunRace(list);
 
-            return winningFunc(list);
+            return winningFunc(list).ToString();
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, GetWinningDistance);
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, GetWinningScore);
         }

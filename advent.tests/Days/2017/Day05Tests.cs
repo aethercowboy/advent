@@ -16,7 +16,7 @@ namespace advent.tests.Days._2017
         {
             var result = Client.Part1(Input);
 
-            Assert.Equal(5, result);
+            Assert.Equal(5.ToString(), result);
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace advent.tests.Days._2017
         {
             var result = Client.Part2(Input);
 
-            Assert.Equal(10, result);
+            Assert.Equal(10.ToString(), result);
         }
     }
 }

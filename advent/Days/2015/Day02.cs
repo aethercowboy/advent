@@ -15,7 +15,7 @@ namespace advent.Days._2015
             h = int.Parse(lwh[2]);
         }
 
-        private static int Part0(string input, Func<int, int, int, int> sideFunc)
+        private static string Part0(string input, Func<int, int, int, int> sideFunc)
         {
             var output = 0;
 
@@ -26,7 +26,7 @@ namespace advent.Days._2015
                 output += sideFunc(l, w, h);
             }
 
-            return output;
+            return output.ToString();
         }
 
         private static List<int> GetUnits(int l, int w, int h, Func<int, int, int> operatorFunc)
@@ -39,7 +39,7 @@ namespace advent.Days._2015
             };
         }
 
-        public override long Part1(string input)
+        public override string Part1(string input)
         {
             return Part0(input, (l, w, h) =>
             {
@@ -50,7 +50,7 @@ namespace advent.Days._2015
             });
         }
 
-        public override long Part2(string input)
+        public override string Part2(string input)
         {
             return Part0(input, (l, w, h) =>
             {

@@ -21,7 +21,7 @@ namespace advent.tests.Days._2020
         {
             var result = day.Part1(data);
 
-            Assert.Equal(71, result);
+            Assert.Equal(71.ToString(), result);
         }
     }
 }
