@@ -70,6 +70,9 @@
     <None Update="Data\2020\Day01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\2021\Day01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Runner.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Runner.cs</LastGenOutput>

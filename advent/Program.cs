@@ -22,5 +22,6 @@ namespace advent
             Console.Write("Press Enter to Quit");
             Console.ReadLine();
         }
+
     }
 }
