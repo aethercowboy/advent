@@ -25,5 +25,10 @@ namespace advent.Extensions
         {
             return string.Concat(list.Select(ToHex));
         }
+
+        public static char ToCharDigit(this int i)
+        {
+            return (char)(i + 48);
+        }
     }
 }
