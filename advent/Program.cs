@@ -8,7 +8,7 @@ namespace advent
         private static void Main(string[] args)
 #pragma warning restore IDE0060 // Remove unused parameter
         {
-            args = new[] { "2021", "day04" };
+            args = new[] { "2021", "day05" };
 
             if (args.Length == 0)
             {
