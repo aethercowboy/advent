@@ -14,6 +14,11 @@ namespace advent.Extensions
                 ?? Enumerable.Empty<string>();
         }
 
+        public static IEnumerable<string> Blocks(this string str)
+        {
+            return str?.Split("\r\n\r\n");
+        }
+
         public static bool IsNullOrEmpty(this string str)
         {
             return string.IsNullOrEmpty(str);
