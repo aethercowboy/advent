@@ -1,4 +1,4 @@
-﻿using System;
+﻿using advent.Models._2021;
 
 namespace advent.Days._2021
 {
@@ -6,12 +6,16 @@ namespace advent.Days._2021
     {
         public override string Part1(string input)
         {
-            throw new NotImplementedException();
+            var school = new LanternfishSchool(input);
+
+            return school.PopulateForDays(80).ToString();
         }
 
         public override string Part2(string input)
         {
-            throw new NotImplementedException();
+            var school = new LanternfishSchool(input);
+
+            return school.PopulateForDays(256).ToString();
         }
     }
 }
